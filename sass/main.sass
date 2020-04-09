@@ -5,8 +5,9 @@ html
 
 body
   font-size: 16px
+  color: #374049
   line-height: 1.5
-  background-color: #F6F7FF
+  background-color: #fff
 
 a:hover , a
   color: inherit
@@ -44,13 +45,24 @@ header
       margin-right: 20px
       border-right: 1px solid #D4D4D4
 
+.sub-title
+  border-bottom: 1px solid #D4D4D4
+  padding: 5px 0
+  p
+    text-transform: uppercase
+
+.multiple-input
+  margin-top: 15px
+
 .main-layout
   max-width: 1300px
   margin: 0 auto
+
 .panel-controls
   width: 280px
   background-color: #ffffff
   &-item
+    border-bottom: 1px solid #D4D4D4
     .control-label
       padding: 15px 50px 15px
       font-size: 16px
@@ -63,20 +75,131 @@ header
       text-transform: uppercase
       font-weight: 100
     &-dropdown
-      height: 200px
-      background-color: #F1F4FE
-      padding-left: 50px
-      padding-top: 20px
+      background-color: #fafbfd
+      font-size: 14px
+      padding: 20px 11px 15px 50px
 
+.dropdown-gpio
+  padding: 0
+  .selecting-gpio
+    margin: 20px 11px 15px 50px
 // Drop-down
-.dropdown, #go
+.dropdown, #camera, #calibration, #acqisition, #configure, #cube, #advanced, #gpio
   display: none
 
-#go:checked ~ .dropdown
+#camera:checked ~ .dropdown,
+#calibration:checked ~ .dropdown,
+#acqisition:checked ~ .dropdown,
+#configure:checked ~ .dropdown,
+#cube:checked ~ .dropdown,
+#advanced:checked ~ .dropdown,
+#gpio:checked ~ .dropdown,
   display: block
-#go:checked ~ .control-label
-  background: #e7edfe
+
+#camera:checked ~ .control-label,
+#calibration:checked ~ .control-label,
+#acqisition:checked ~ .control-label,
+#configure:checked ~ .control-label,
+#cube:checked ~ .control-label,
+#advanced:checked ~ .control-label,
+#gpio:checked ~ .control-label,
+  background: rgba(120, 153, 252, 0.1)
   color: #7798FB
   border-left: 4px solid #7798FB
 
-// multiple range
+.btn-composition
+  margin-bottom: 15px
+  button
+    width: 100%
+    height: 29px
+    border-radius: 3px
+    border: solid 1px #7899fc
+    background-color: rgba(215, 225, 234, 0.3)
+    font-size: 14px
+    font-weight: 500
+    &:active
+      background-color: #7899fc
+  span
+    font-size: 8px
+    color: #949494
+  &-warning
+    button
+      border-radius: 3px
+      border: solid 1px #ff5a5a
+      margin-top: 25px
+
+.ref-exp-wrapper
+  padding-top: 15px
+  border-top: 1px solid #D4D4D4
+  display: flex
+  justify-content: space-between
+  p
+    font-size: 12px
+    font-weight: 100
+  input
+    width: 50px
+    height: 20px
+    border-radius: 3px
+    border: solid 1px #d5e1eb
+
+.acqisition-control
+  display: flex
+  justify-content: space-between
+  margin-bottom: 15px
+  select
+    font-size: 10px
+    width: 38px
+    height: 20px
+    border-radius: 3px
+    border: solid 1px #d5e1eb
+    background-color: rgba(213, 225, 235, 0.1)
+  &-stream-type
+    padding-top: 15px
+    border-top: solid 1px #d5e1eb
+    select
+      margin-top: 15px
+      height: 30px
+      border-radius: 3px
+      border: solid 1px #d5e1eb
+      width: 100%
+
+.selecting-model
+  select, label
+    font-size: 12px
+    height: 30px
+    border-radius: 3px
+    border: solid 1px #d5e1eb
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+  label
+    margin-top: 25px
+  >p
+    margin-bottom: 5px
+
+  input[type="file"]
+    display: none
+.selecting-gpio
+  select
+    margin-bottom: 20px
+
+.sub-title-lower
+  padding-bottom: 5px
+  margin-bottom: 15px
+  border-bottom: 1px solid #D4D4D4
+
+.control-btn-advanced
+  padding-bottom: 30px
+
+.btn-large
+  display: flex
+  align-items: center
+  justify-content: center
+  background-color: #7899fc
+  color: #ffffff
+  border-radius: 3px
+  border: solid 1px #7899fc
+  font-size: 14px
+  width: 100%
+  height: 72px

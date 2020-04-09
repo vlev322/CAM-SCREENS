@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Screens Cam</title>
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/multirange.css" />
   </head>
   <body>
     <!-- Header block START-->
@@ -18,7 +19,7 @@
           <div><a>+1-978-353-4100</a></div>
         </div>
         <div>
-          <a href="#">My Accaunt</a>
+          <a href="#">My Account</a>
         </div>
       </header>
     </div>
@@ -30,21 +31,195 @@
           <p>camera info</p>
           <span>&gt;</span>
         </div>
+
         <div class="panel-controls-item">
-          <input id="go" type="checkbox" />
+          <input id="camera" type="checkbox" />
           <div class="control-label">
-            <label for="go">Camera Setup</label>
+            <label for="camera">Camera Setup</label>
           </div>
           <div class="panel-controls-item-dropdown dropdown">
             <div class="control-item">
               <p>Expouse</p>
-              <input type="range" name="" id="">
+              <input type="range" value="50" max="300" />
+            </div>
+            <div class="control-item">
+              <p>Frame Period</p>
+              <input type="range" value="50" max="300" />
+            </div>
+            <div class="sub-title">
+              <p>roi</p>
+            </div>
+            <div class="multiple-input">
+              <input type="range" multiple value="50" min="0" max="300" />
+            </div>
+            <div class="multiple-input">
+              <input type="range" multiple value="50" min="0" max="300" />
             </div>
           </div>
         </div>
+
+        <div class="panel-controls-item">
+          <input id="calibration" type="checkbox" />
+          <div class="control-label">
+            <label for="calibration">Calibration</label>
+          </div>
+          <div class="panel-controls-item-dropdown dropdown">
+            <div class="btn-composition">
+              <button>Collect Dark Reference</button>
+              <span>Up to date. Last captured References: 30.03</span>
+            </div>
+
+            <div class="btn-composition">
+              <button>Collect White Reference</button>
+              <span>Need update. Last captured References: 30.03</span>
+            </div>
+            <div class="ref-exp-wrapper">
+              <p>Reference Expiration</p>
+              <input type="text" />
+            </div>
+          </div>
+        </div>
+        <div class="panel-controls-item">
+          <input id="acqisition" type="checkbox" />
+          <div class="control-label">
+            <label for="acqisition">Acqisition Setup</label>
+          </div>
+          <div class="panel-controls-item-dropdown dropdown">
+            <div class="acqisition-control">
+              <p>Spatial Bining</p>
+              <select>
+                <option>1X</option>
+                <option>2X</option>
+                <option>3X</option>
+                <option>4X</option>
+                <option>5X</option>
+              </select>
+            </div>
+            <div class="acqisition-control">
+              <p>Spectral Bining</p>
+              <select>
+                <option>1X</option>
+                <option>2X</option>
+                <option>3X</option>
+                <option>4X</option>
+                <option>5X</option>
+              </select>
+            </div>
+            <div class="acqisition-control-stream-type">
+              <p>Streaming Output Type</p>
+              <select>
+                <option>Raw hyperspectral</option>
+                <option>Pseudo RGB image</option>
+                <option>Classified image grayscale</option>
+                <option>Classified image color</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-controls-item">
+          <input id="configure" type="checkbox" />
+          <div class="control-label">
+            <label for="configure">Configure Model</label>
+          </div>
+          <div class="panel-controls-item-dropdown dropdown">
+            <div class="selecting-model">
+              <select>
+                <option>Current Model (name)</option>
+                <option>Other Model (name)</option>
+              </select>
+              <label for="file-upload">Upload Model</label>
+              <input id="file-upload" type="file" />
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-controls-item">
+          <input id="cube" type="checkbox" />
+          <div class="control-label">
+            <label for="cube">Cube Manager</label>
+          </div>
+          <div class="panel-controls-item-dropdown dropdown"></div>
+        </div>
+
+        <div class="panel-controls-item">
+          <input id="advanced" type="checkbox" />
+          <div class="control-label">
+            <label for="advanced">Advanced</label>
+          </div>
+          <div class="panel-controls-item-dropdown dropdown">
+            <div class="control-btn-advanced">
+              <div class="sub-title-lower">
+                <p>Local storage</p>
+              </div>
+              <div class="btn-composition">
+                <button>Load Settings</button>
+              </div>
+            </div>
+            <div class="sub-title-lower">
+              <p>Transfer</p>
+            </div>
+            <div class="btn-composition">
+              <button>Export Settings</button>
+            </div>
+            <div class="btn-composition">
+              <button>Import Settings</button>
+            </div>
+            <div class="btn-composition-warning btn-composition">
+              <button>Restore Factory Settings</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-controls-item">
+          <input id="gpio" type="checkbox" />
+          <div class="control-label">
+            <label for="gpio">GPIO Settings</label>
+          </div>
+          <div class="panel-controls-item-dropdown dropdown dropdown-gpio">
+            <div class="selecting-model selecting-gpio">
+              <p>Acqisition trigger input</p>
+              <select id="input">
+                <option>TTL Input 1</option>
+                <option>TTL Input 2</option>
+              </select>
+
+              <p>Acquisition trigger output</p>
+              <select id="input">
+                <option>TTL Output 1</option>
+                <option>TTL Output 2</option>
+              </select>
+
+              <p>Encoder input</p>
+              <select id="input">
+                <option>Serial Port 1</option>
+                <option>Serial Port 2</option>
+              </select>
+            </div>
+            <button class="btn-large">Save Settings</button>
+          </div>
+        </div>
+        <!-- </div> -->
+
+        <!-- <div class="panel-controls-item">
+          <input id="calibration" type="checkbox" />
+          <div class="control-label">
+            <label for="calibration">Calibration</label>
+          </div>
+          <div class="panel-controls-item-dropdown dropdown">
+            <div class="multiple-input">
+              <input type="text" min />
+              <div>
+                <input type="range" multiple value="50" max="300" />
+              </div>
+              <input type="text" max />
+            </div>
+          </div>
+        </div> -->
       </div>
       <!-- Panel Controls END-->
     </div>
-    <script src="./js/multipleInput.js"></script>
+    <!-- <script src="./js/multipleInput.js"></script> -->
+    <script src="./js/multirange.js"></script>
   </body>
 </html>

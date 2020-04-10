@@ -13,6 +13,26 @@ a:hover , a
   color: inherit
   text-decoration: inherit
 
+button::-moz-focus-inner,
+button::active,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner
+  border-style: none
+  padding: 0
+  outline: none,
+  box-shadow: none
+button
+  outline: none
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring
+  outline: 1px dotted ButtonText
+// button:active
+//   border-style: none
+//   padding: 0
 p, body
   padding: 0
   margin: 0
@@ -47,9 +67,26 @@ header
 
 .sub-title
   border-bottom: 1px solid #D4D4D4
-  padding: 5px 0
+  padding: 10px 0
   p
     text-transform: uppercase
+    
+.sub-title-lower
+  padding-bottom: 5px
+  margin-bottom: 15px
+  border-bottom: 1px solid #D4D4D4
+
+.btn-large
+  display: flex
+  align-items: center
+  justify-content: center
+  background-color: #7899fc
+  color: #ffffff
+  border-radius: 3px
+  border: solid 1px #7899fc
+  font-size: 14px
+  width: 100%
+  height: 72px
 
 .multiple-input
   margin-top: 15px
@@ -57,23 +94,32 @@ header
 .main-layout
   max-width: 1300px
   margin: 0 auto
+  display: flex
 
 .panel-controls
-  width: 280px
+  width: 300px
   background-color: #ffffff
   &-item
     border-bottom: 1px solid #D4D4D4
     .control-label
-      padding: 15px 50px 15px
+      padding: 15px
       font-size: 16px
+      >label
+        img
+          margin-right: 17px
     &:first-child
-      padding: 15px 20px
-      display: flex
-      align-items: center
-      justify-content: space-between
-      border-bottom: 1px solid #D4D4D4
-      text-transform: uppercase
-      font-weight: 100
+      padding: 12px 20px
+      button
+        padding: 6px 30px
+        border: 1px solid #7899fc
+        border-radius: 3px
+        text-transform: uppercase
+        display: flex
+        justify-content: space-between
+        white-space: nowrap
+        background-color: #ffffff
+        img
+          margin-left: 8px
     &-dropdown
       background-color: #fafbfd
       font-size: 14px
@@ -184,22 +230,61 @@ header
   select
     margin-bottom: 20px
 
-.sub-title-lower
-  padding-bottom: 5px
-  margin-bottom: 15px
-  border-bottom: 1px solid #D4D4D4
-
 .control-btn-advanced
   padding-bottom: 30px
 
-.btn-large
-  display: flex
-  align-items: center
-  justify-content: center
-  background-color: #7899fc
-  color: #ffffff
-  border-radius: 3px
-  border: solid 1px #7899fc
-  font-size: 14px
+// Main content
+main
+  background-color: #f5f7ff
+  padding-left: 32px
+  padding-top: 16px
   width: 100%
-  height: 72px
+
+.scrollable-block
+  height: 700px
+  display: flex
+  overflow: scroll
+  .screen-block, .diagram-block
+    background-color: #fff
+    height: 500px
+    margin-top: 30px
+  .diagram-block
+    height: 200px
+  &-aside
+    margin-top: 90px
+    background-color: #ffffff
+    width: 140px
+    height: 500px
+  &-main-layout
+    width: 80%
+    margin-right: 30px
+
+.main-layout-header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  background-color: #fff
+  padding: 15px 20px
+  &-params, &-brightness
+    display: flex
+    align-items: center
+    justify-content: space-between
+    p
+      text-transform: uppercase
+      font-weight: 200
+      letter-spacing: 1px
+      font-size: 12px
+      margin-right: 5px
+      color: #121212
+      opacity: 0.5
+  &-brightness
+    p
+      font-size: 12px
+      font-weight: 500
+      text-transform: none
+      letter-spacing: normal
+      opacity: 1
+
+//Dropdown styles START
+
+//Dropdown styles END

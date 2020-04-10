@@ -24,18 +24,19 @@
       </header>
     </div>
     <!-- Header block END-->
+
     <div class="main-layout">
       <!-- Panel Controls START-->
       <div class="panel-controls">
         <div class="panel-controls-item">
-          <p>camera info</p>
-          <span>&gt;</span>
+          <button>Camera Setup Wizard <img src="./assets/img/icons/vector/back-wizard.svg" alt="" /></button>
         </div>
 
+        <!-- Camera Setup -->
         <div class="panel-controls-item">
           <input id="camera" type="checkbox" />
           <div class="control-label">
-            <label for="camera">Camera Setup</label>
+            <label for="camera"><img src="./assets/img/icons/vector/optical-setup.svg" alt="" /> Camera Setup</label>
           </div>
           <div class="panel-controls-item-dropdown dropdown">
             <div class="control-item">
@@ -55,13 +56,31 @@
             <div class="multiple-input">
               <input type="range" multiple value="50" min="0" max="300" />
             </div>
+            <div class="sub-title-lower">
+              <p>Gain</p>
+            </div>
+            <div class="selecting-model">
+              <select>
+                <option>Normal</option>
+                <option>Low</option>
+                <option>High</option>
+              </select>
+            </div>
+            <!-- <div class="multiple-input">
+              <input type="text" min />
+              <div>
+                <input type="range" multiple value="50" max="300" />
+              </div>
+              <input type="text" max />
+            </div> -->
           </div>
         </div>
 
+        <!-- Calibration -->
         <div class="panel-controls-item">
           <input id="calibration" type="checkbox" />
           <div class="control-label">
-            <label for="calibration">Calibration</label>
+            <label for="calibration"><img src="./assets/img/icons/vector/calibration.svg" alt="" />Calibration</label>
           </div>
           <div class="panel-controls-item-dropdown dropdown">
             <div class="btn-composition">
@@ -79,10 +98,12 @@
             </div>
           </div>
         </div>
+
+        <!-- Acqisition Setup -->
         <div class="panel-controls-item">
           <input id="acqisition" type="checkbox" />
           <div class="control-label">
-            <label for="acqisition">Acqisition Setup</label>
+            <label for="acqisition"><img src="./assets/img/icons/vector/advance-setup.svg" alt="" />Acqisition Setup</label>
           </div>
           <div class="panel-controls-item-dropdown dropdown">
             <div class="acqisition-control">
@@ -117,10 +138,11 @@
           </div>
         </div>
 
+        <!-- Configure Model -->
         <div class="panel-controls-item">
           <input id="configure" type="checkbox" />
           <div class="control-label">
-            <label for="configure">Configure Model</label>
+            <label for="configure"><img src="./assets/img/icons/vector/confuguration.svg" alt="" />Configure Model</label>
           </div>
           <div class="panel-controls-item-dropdown dropdown">
             <div class="selecting-model">
@@ -134,18 +156,20 @@
           </div>
         </div>
 
+        <!-- Cube Manager -->
         <div class="panel-controls-item">
           <input id="cube" type="checkbox" />
           <div class="control-label">
-            <label for="cube">Cube Manager</label>
+            <label for="cube"><img src="./assets/img/icons/vector/downloads.svg" alt="" />Cube Manager</label>
           </div>
           <div class="panel-controls-item-dropdown dropdown"></div>
         </div>
 
+        <!-- Advanced -->
         <div class="panel-controls-item">
           <input id="advanced" type="checkbox" />
           <div class="control-label">
-            <label for="advanced">Advanced</label>
+            <label for="advanced"><img src="./assets/img/icons/vector/advanced.svg" alt="" />Advanced</label>
           </div>
           <div class="panel-controls-item-dropdown dropdown">
             <div class="control-btn-advanced">
@@ -171,10 +195,11 @@
           </div>
         </div>
 
+        <!-- GPIO Settings -->
         <div class="panel-controls-item">
           <input id="gpio" type="checkbox" />
           <div class="control-label">
-            <label for="gpio">GPIO Settings</label>
+            <label for="gpio"><img src="./assets/img/icons/vector/input.svg" alt="" />GPIO Settings</label>
           </div>
           <div class="panel-controls-item-dropdown dropdown dropdown-gpio">
             <div class="selecting-model selecting-gpio">
@@ -183,13 +208,11 @@
                 <option>TTL Input 1</option>
                 <option>TTL Input 2</option>
               </select>
-
               <p>Acquisition trigger output</p>
               <select id="input">
                 <option>TTL Output 1</option>
                 <option>TTL Output 2</option>
               </select>
-
               <p>Encoder input</p>
               <select id="input">
                 <option>Serial Port 1</option>
@@ -199,25 +222,35 @@
             <button class="btn-large">Save Settings</button>
           </div>
         </div>
-        <!-- </div> -->
-
-        <!-- <div class="panel-controls-item">
-          <input id="calibration" type="checkbox" />
-          <div class="control-label">
-            <label for="calibration">Calibration</label>
-          </div>
-          <div class="panel-controls-item-dropdown dropdown">
-            <div class="multiple-input">
-              <input type="text" min />
-              <div>
-                <input type="range" multiple value="50" max="300" />
-              </div>
-              <input type="text" max />
-            </div>
-          </div>
-        </div> -->
       </div>
       <!-- Panel Controls END-->
+
+      <!-- Main content -->
+      <main>
+        <div class="scrollable-block">
+          <div class="scrollable-block-main-layout">
+            <div class="main-layout-header">
+              <div class="main-layout-header-params">
+                <p>display parameters:</p>
+                <div class="selecting-model">
+                  <select>
+                    <option>Hyperspectral</option>
+                    <option>Classiffied</option>
+                    <option>Unclassiffied</option>
+                  </select>
+                </div>
+              </div>
+              <div class="main-layout-header-brightness">
+                <p>Brightness</p>
+                <input type="range" />
+              </div>
+            </div>
+            <div class="screen-block"></div>
+            <div class="diagram-block"></div>
+          </div>
+          <div class="scrollable-block-aside"></div>
+        </div>
+      </main>
     </div>
     <!-- <script src="./js/multipleInput.js"></script> -->
     <script src="./js/multirange.js"></script>

@@ -1,0 +1,81 @@
+#dialog {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.01);
+  opacity: 0;
+  visibility: hidden;
+}
+.dialog_state {
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+}
+.dialog_state:checked ~ #dialog,
+.dialog_state:checked ~ #dialog #dlg-wrap {
+  opacity: 1;
+  visibility: visible;
+}
+
+#dialog #dlg-wrap {
+  max-height: 48rem;
+  opacity: 1;
+}
+
+.dialog_state:checked ~ .main_area,
+.main_area.dialog_open {
+  filter: blur(6px);
+}
+#dlg-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  width: 100vw;
+  height: 100vh;
+}
+
+#dlg-wrap {
+  position: relative;
+  z-index: 1;
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 0.25rem;
+  background: #fff;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+#dlg-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  color: #949494;
+}
+
+#main {
+  height: 100vh;
+  width: 100%;
+}
+#main .center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: 3;
+}

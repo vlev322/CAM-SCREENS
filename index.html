@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/multirange.css" />
     <link rel="stylesheet" href="css/modals.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/customSelect.css" />
   </head>
   <body>
     <input type="checkbox" name="dialog_state" id="dialog_state" class="dialog_state" />
@@ -63,12 +64,18 @@
                 <div class="sub-title-lower">
                   <p>Gain</p>
                 </div>
-                <div class="selecting-model">
-                  <select>
-                    <option>Normal</option>
-                    <option>Low</option>
-                    <option>High</option>
-                  </select>
+                <div class="custom-select-wrapper">
+                  <div class="custom-select">
+                    <div class="custom-select__trigger">
+                      <span>Normal</span>
+                      <div class="arrow"></div>
+                    </div>
+                    <div class="custom-options">
+                      <span class="custom-option selected" data-value="normal">Normal</span>
+                      <span class="custom-option" data-value="low">Low</span>
+                      <span class="custom-option" data-value="high">High</span>
+                    </div>
+                  </div>
                 </div>
                 <!-- <div class="multiple-input">
               <input type="text" min />
@@ -110,35 +117,57 @@
                 <label for="acqisition"><img src="./assets/img/icons/vector/advance-setup.svg" alt="" />Acqisition Setup</label>
               </div>
               <div class="panel-controls-item-dropdown dropdown">
-                <div class="acqisition-control">
-                  <p>Spatial Bining</p>
-                  <select>
-                    <option>1X</option>
-                    <option>2X</option>
-                    <option>3X</option>
-                    <option>4X</option>
-                    <option>5X</option>
-                  </select>
+                <div class="acqisition">
+                  <div class="acqisition-control">
+                    <p>Spatial Bining</p>
+                    <p>Spectral Bining</p>
+                  </div>
+                  <div class="acqisition-select-small">
+                    <div class="custom-select-wrapper">
+                      <div class="custom-select">
+                        <div class="custom-select__trigger">
+                          <span>1X</span>
+                          <div class="arrow"></div>
+                        </div>
+                        <div class="custom-options">
+                          <span class="custom-option selected" data-value="">1X</span>
+                          <span class="custom-option" data-value="">2X</span>
+                          <span class="custom-option" data-value="">3X</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="custom-select-wrapper">
+                      <div class="custom-select">
+                        <div class="custom-select__trigger">
+                          <span>1X</span>
+                          <div class="arrow"></div>
+                        </div>
+                        <div class="custom-options">
+                          <span class="custom-option selected" data-value="">1X</span>
+                          <span class="custom-option" data-value="">2X</span>
+                          <span class="custom-option" data-value="">3X</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="acqisition-control">
-                  <p>Spectral Bining</p>
-                  <select>
-                    <option>1X</option>
-                    <option>2X</option>
-                    <option>3X</option>
-                    <option>4X</option>
-                    <option>5X</option>
-                  </select>
-                </div>
-                <div class="acqisition-control-stream-type">
+                <section class="acqisition-stream">
                   <p>Streaming Output Type</p>
-                  <select>
-                    <option>Raw hyperspectral</option>
-                    <option>Pseudo RGB image</option>
-                    <option>Classified image grayscale</option>
-                    <option>Classified image color</option>
-                  </select>
-                </div>
+                  <div class="custom-select-wrapper">
+                    <div class="custom-select">
+                      <div class="custom-select__trigger">
+                        <span>Raw hyperspectral</span>
+                        <div class="arrow"></div>
+                      </div>
+                      <div class="custom-options">
+                        <span class="custom-option selected" data-value="">Raw hyperspectral</span>
+                        <span class="custom-option" data-value="">Pseudo RGB image</span>
+                        <span class="custom-option" data-value="">Classified image grayscale</span>
+                        <span class="custom-option" data-value="">Classified image color</span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
               </div>
             </div>
 
@@ -150,12 +179,58 @@
               </div>
               <div class="panel-controls-item-dropdown dropdown">
                 <div class="selecting-model">
-                  <select>
-                    <option>Current Model (name)</option>
-                    <option>Other Model (name)</option>
-                  </select>
+                  <div class="custom-select-wrapper">
+                    <div class="custom-select">
+                      <div class="custom-select__trigger">
+                        <span>Current Model (name)</span>
+                        <div class="arrow"></div>
+                      </div>
+                      <div class="custom-options">
+                        <span class="custom-option selected" data-value="">Current Model (name)</span>
+                        <span class="custom-option" data-value="">Other Model (name)</span>
+                      </div>
+                    </div>
+                  </div>
                   <label for="file-upload">Upload Model</label>
                   <input id="file-upload" type="file" />
+                </div>
+                <div class="collecting-data">
+                  <div class="btn-composition"><button>Collecting Training Data…</button></div>
+                  <section>
+                    <div>
+                      <p>Prefix</p>
+                      <p>Suffix</p>
+                      <p>File size</p>
+                    </div>
+                    <div>
+                      <p>Train data</p>
+                      <div class="custom-select-wrapper">
+                        <div class="custom-select">
+                          <div class="custom-select__trigger">
+                            <span>@data</span>
+                            <div class="arrow"></div>
+                          </div>
+                          <div class="custom-options">
+                            <span class="custom-option selected" data-value="">@data</span>
+                            <span class="custom-option" data-value="">@data</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="custom-select-wrapper">
+                        <div class="custom-select">
+                          <div class="custom-select__trigger">
+                            <span>500</span>
+                            <div class="arrow"></div>
+                          </div>
+                          <div class="custom-options">
+                            <span class="custom-option selected" data-value="">500</span>
+                            <span class="custom-option" data-value="">1000</span>
+                            <span class="custom-option" data-value="">2000</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
                 </div>
               </div>
             </div>
@@ -206,22 +281,46 @@
                 <label for="gpio"><img src="./assets/img/icons/vector/input.svg" alt="" />GPIO Settings</label>
               </div>
               <div class="panel-controls-item-dropdown dropdown dropdown-gpio">
-                <div class="selecting-model selecting-gpio">
+                <div class="selecting-gpio">
                   <p>Acqisition trigger input</p>
-                  <select id="input">
-                    <option>TTL Input 1</option>
-                    <option>TTL Input 2</option>
-                  </select>
+                  <div class="custom-select-wrapper">
+                    <div class="custom-select">
+                      <div class="custom-select__trigger">
+                        <span>TTL Input 1</span>
+                        <div class="arrow"></div>
+                      </div>
+                      <div class="custom-options">
+                        <span class="custom-option selected" data-value="">TTL Input 1</span>
+                        <span class="custom-option" data-value="">TTL Input 2</span>
+                      </div>
+                    </div>
+                  </div>
                   <p>Acquisition trigger output</p>
-                  <select id="input">
-                    <option>TTL Output 1</option>
-                    <option>TTL Output 2</option>
-                  </select>
+                  <div class="custom-select-wrapper">
+                    <div class="custom-select">
+                      <div class="custom-select__trigger">
+                        <span>TTL Input 1</span>
+                        <div class="arrow"></div>
+                      </div>
+                      <div class="custom-options">
+                        <span class="custom-option selected" data-value="">TTL Input 1</span>
+                        <span class="custom-option" data-value="">TTL Input 2</span>
+                      </div>
+                    </div>
+                  </div>
                   <p>Encoder input</p>
-                  <select id="input">
-                    <option>Serial Port 1</option>
-                    <option>Serial Port 2</option>
-                  </select>
+                  <div class="custom-select-wrapper">
+                    <div class="custom-select">
+                      <div class="custom-select__trigger">
+                        <span>Serial Port 1</span>
+                        <div class="arrow"></div>
+                      </div>
+                      <div class="custom-options">
+                        <span class="custom-option selected" data-value="">Serial Port 1</span>
+                        <span class="custom-option" data-value="">Serial Port 2</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <button class="btn-large">Save Settings</button>
               </div>
@@ -239,12 +338,18 @@
                 <div class="main-layout-header">
                   <div class="main-layout-header-params">
                     <p>display parameters:</p>
-                    <div class="selecting-model">
-                      <select>
-                        <option>Hyperspectral</option>
-                        <option>Classiffied</option>
-                        <option>Unclassiffied</option>
-                      </select>
+                    <div class="custom-select-wrapper">
+                      <div class="custom-select">
+                        <div class="custom-select__trigger">
+                          <span>Hyperspectral</span>
+                          <div class="arrow"></div>
+                        </div>
+                        <div class="custom-options">
+                          <span class="custom-option selected" data-value="">Hyperspectral</span>
+                          <span class="custom-option" data-value="">Classiffied</span>
+                          <span class="custom-option" data-value="">Unclassiffied</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="main-layout-header-brightness">
@@ -428,5 +533,6 @@
     </div>
     <!-- <script src="./js/multipleInput.js"></script> -->
     <script src="./js/multirange.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

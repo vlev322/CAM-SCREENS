@@ -151,11 +151,38 @@ header {
       background-color: #fafbfd;
       font-size: 14px;
       padding: 20px 11px 15px 50px; }
+      .panel-controls-item-dropdown .acqisition {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 10px;
+        border-bottom: solid 1px #e7e9ea; }
+        .panel-controls-item-dropdown .acqisition-control {
+          display: flex;
+          flex-direction: column;
+          align-items: start; }
+          .panel-controls-item-dropdown .acqisition-control p {
+            padding: 7px 0; }
+        .panel-controls-item-dropdown .acqisition-select-small {
+          display: flex;
+          flex-direction: column; }
+          .panel-controls-item-dropdown .acqisition-select-small .custom-select-wrapper {
+            width: 40px;
+            font-size: 10px; }
+            .panel-controls-item-dropdown .acqisition-select-small .custom-select-wrapper:first-child {
+              margin-bottom: 10px; }
+
+.acqisition-stream p {
+  padding: 10px 0; }
 
 .dropdown-gpio {
   padding: 0; }
   .dropdown-gpio .selecting-gpio {
-    margin: 20px 11px 15px 50px; }
+    padding: 20px 11px 28px 50px; }
+    .dropdown-gpio .selecting-gpio .custom-select-wrapper {
+      margin-bottom: 28px; }
+      .dropdown-gpio .selecting-gpio .custom-select-wrapper:last-child {
+        margin: 0; }
 
 .dropdown, #camera, #calibration, #acqisition, #configure, #cube, #advanced, #gpio {
   display: none; }
@@ -189,7 +216,7 @@ header {
     border: solid 1px #7899fc;
     background-color: rgba(215, 225, 234, 0.3);
     font-size: 14px;
-    font-weight: 500; }
+    font-weight: 400; }
     .btn-composition button:active {
       background-color: #7899fc; }
   .btn-composition span {
@@ -214,45 +241,40 @@ header {
     border-radius: 3px;
     border: solid 1px #d5e1eb; }
 
-.acqisition-control {
+.selecting-model {
+  padding-bottom: 20px;
+  border-bottom: solid 1px #e7e9ea; }
+  .selecting-model label {
+    font-size: 12px;
+    height: 30px;
+    border-radius: 3px;
+    border: solid 1px #7899fc;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .selecting-model label {
+    margin-top: 25px; }
+  .selecting-model > p {
+    margin-bottom: 5px; }
+  .selecting-model input[type="file"] {
+    display: none; }
+
+.collecting-data .btn-composition {
+  margin: 0; }
+.collecting-data section {
+  border-radius: 3px;
+  background-color: rgba(215, 225, 234, 0.3);
   display: flex;
   justify-content: space-between;
-  margin-bottom: 15px; }
-  .acqisition-control select {
-    font-size: 10px;
-    width: 38px;
-    height: 20px;
-    border-radius: 3px;
-    border: solid 1px #d5e1eb;
-    background-color: rgba(213, 225, 235, 0.1); }
-  .acqisition-control-stream-type {
-    padding-top: 15px;
-    border-top: solid 1px #d5e1eb; }
-    .acqisition-control-stream-type select {
-      margin-top: 15px;
-      height: 30px;
-      border-radius: 3px;
-      border: solid 1px #d5e1eb;
-      width: 100%; }
-
-.selecting-model select, .selecting-model label {
-  font-size: 12px;
-  height: 30px;
-  border-radius: 3px;
-  border: solid 1px #d5e1eb;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-.selecting-model label {
-  margin-top: 25px; }
-.selecting-model > p {
-  margin-bottom: 5px; }
-.selecting-model input[type="file"] {
-  display: none; }
-
-.selecting-gpio select {
-  margin-bottom: 20px; }
+  padding: 15px 11px; }
+  .collecting-data section > div p {
+    margin: 7px 0; }
+.collecting-data .custom-select__trigger {
+  background-color: transparent; }
+.collecting-data .custom-select {
+  border: none;
+  border-bottom: 1px solid #d5e1eb; }
 
 .control-btn-advanced {
   padding-bottom: 30px; }
@@ -306,6 +328,14 @@ main {
     text-transform: none;
     letter-spacing: normal;
     opacity: 1; }
+  .main-layout-header-params p {
+    white-space: nowrap; }
+  .main-layout-header-params .custom-select__trigger {
+    background-color: transparent; }
+  .main-layout-header-params .custom-select {
+    border: none; }
+    .main-layout-header-params .custom-select-wrapper {
+      min-width: 100px; }
 
 .small-dlg, .large-dlg {
   position: absolute;
@@ -415,7 +445,8 @@ main {
   margin-top: 30px;
   font-size: 14px; }
   #dlg-wrap > section p:last-child {
-    margin: 20px; }
+    margin: 20px;
+    margin-left: 0; }
 
 .qr-code {
   display: flex;

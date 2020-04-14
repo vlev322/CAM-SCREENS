@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Screens Cam</title>
-    <link rel="stylesheet" href="css/multirange.css" />
+    <!-- <link rel="stylesheet" href="css/multirange.css" /> -->
+    <link rel="stylesheet" href="./assets/fonts/Verdana/verdana.css" />
     <link rel="stylesheet" href="css/modals.css" />
-    <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/customSelect.css" />
+    <link rel="stylesheet" href="css/input-range.css" />
+    <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
     <input type="checkbox" name="dialog_state" id="dialog_state" class="dialog_state" />
@@ -191,7 +193,7 @@
                       </div>
                     </div>
                   </div>
-                  <label for="file-upload">Upload Model</label>
+                  <label for="file-upload"><img src="./assets/img/icons/vector/upload.svg" alt="upload" />Upload Model</label>
                   <input id="file-upload" type="file" />
                 </div>
                 <div class="collecting-data">
@@ -236,12 +238,93 @@
             </div>
 
             <!-- Cube Manager -->
-            <div class="panel-controls-item">
+            <div class="panel-controls-item file-manager">
               <input id="cube" type="checkbox" />
               <div class="control-label">
                 <label for="cube"><img src="./assets/img/icons/vector/downloads.svg" alt="" />Cube Manager</label>
               </div>
-              <div class="panel-controls-item-dropdown dropdown"></div>
+              <div class="panel-controls-item-dropdown dropdown">
+                <section class="file-manager-header">
+                  <div class="file-manager-header-selector">
+                    <div class="select-circle"><div class="selected"></div></div>
+                    <p>select all</p>
+                  </div>
+                  <div class="search">
+                    <input type="text" placeholder="SEARCH" />
+                    <img src="./assets/img/icons/vector/search.svg" alt="search" />
+                  </div>
+
+                  <div class="file-manager-header-selected-button">
+                    <button class="button">select</button>
+                  </div>
+                </section>
+                <section class="file-manager-list">
+                  <div class="file-manager-list-item">
+                    <div class="nested-level-icon">
+                      <input type="checkbox" id="selector" />
+                      <label class="select-circle" for="selector"><div class="selected"></div></label>
+                      <img src="./assets/img/icons/vector/combined-folder.svg" alt="icon" />
+                    </div>
+                    <p>Train Data Folder 1</p>
+                  </div>
+                  <div class="file-manager-list-item">
+                    <div class="nested-level-icon">
+                      <input type="checkbox" id="selector" />
+                      <label class="select-circle" for=""><div class="selected"></div></label>
+                      <img src="./assets/img/icons/vector/combined-folder.svg" alt="icon" />
+                    </div>
+                    <p>Train Data Folder 2</p>
+                  </div>
+                  <div class="wrapper-file-manager">
+                    <div class="file-manager-list-item open">
+                      <div class="nested-level-icon">
+                        <input type="checkbox" id="selector" />
+                        <label class="select-circle" for=""><div class="selected"></div></label>
+                        <img src="./assets/img/icons/vector/combined-folder.svg" alt="icon" />
+                      </div>
+                      <p>Train Data Folder 3</p>
+                      <section>
+                        <input type="text" />
+                        <div>
+                          <button><img src="./assets/img/icons/vector/close.svg" alt="" /></button
+                          ><button><img src="./assets/img/icons/vector/arrow-ok.svg" alt="" /></button>
+                        </div>
+                      </section>
+                    </div>
+                    <section class="file-manager-list-item nested-folders">
+                      <img src="./assets/img/icons/vector/folder.svg" alt="icon" />
+                      <p>Train Data</p>
+                    </section>
+                    <section class="file-manager-list-item nested-folders">
+                      <img src="./assets/img/icons/vector/folder.svg" alt="icon" />
+                      <p>Train Data</p>
+                    </section>
+                    <section class="file-manager-list-item nested-folders nested-folders-second-level">
+                      <img src="./assets/img/icons/vector/file.svg" alt="icon" />
+                      <p>Train Data</p>
+                    </section>
+                    <section class="file-manager-list-item nested-folders nested-folders-second-level">
+                      <img src="./assets/img/icons/vector/file.svg" alt="icon" />
+                      <p>Train Data</p>
+                    </section>
+                  </div>
+                  <div class="file-manager-list-item">
+                    <div class="nested-level-icon">
+                      <input type="checkbox" id="selector" />
+                      <label class="select-circle" for=""><div class="selected"></div></label>
+                      <img src="./assets/img/icons/vector/combined-folder.svg" alt="icon" />
+                    </div>
+                    <p>Train Data Folder 4</p>
+                  </div>
+                </section>
+                <section class="file-manager-footer">
+                  <div>
+                    <button class="button">export</button>
+                    <button class="button">delete</button>
+                  </div>
+                  <button class="button">cancel</button>
+                </section>
+              </div>
             </div>
 
             <!-- Advanced -->
@@ -481,7 +564,7 @@
       <!-- large modal -->
       <div class="large-dlg">
         <div id="dlg-wrap">
-          <label id="dlg-close" for="dialog_state">X</label>
+          <label id="dlg-close" for="dialog_state"><img src="./assets/img/icons/vector/close.svg" alt="" /></label>
           <div class="large-dlg-title"><p class="lines-around">Need Help?</p></div>
           <div class="device-info">
             <section>
@@ -510,7 +593,7 @@
                 </aside>
               </div>
             </section>
-            <button><img src="./assets/img/icons/vector/downloads.svg" alt="" />Download Manual</button>
+            <button><img src="./assets/img/icons/vector/download.svg" alt="" />Download Manual</button>
           </div>
           <section>
             <article>

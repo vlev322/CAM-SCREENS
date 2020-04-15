@@ -3,7 +3,7 @@
   user-select: none;
   width: 100%;
   font-size: 12px;
-  font-family: sans-serif;
+  font-family: "Verdana";
 }
 
 .custom-select {
@@ -11,6 +11,8 @@
   flex-direction: column;
   border-radius: 3px;
   border: solid 1px #d5e1eb;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 .custom-select__trigger {
@@ -33,11 +35,13 @@
   border: solid 1px #d5e1eb;
   border-top: 0;
   background: #fff;
-  transition: all 0.5s;
+  /* transition: all 0.5s; */
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   z-index: 2;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 
 .custom-select.open .custom-options {
@@ -51,7 +55,7 @@
   display: block;
   padding: 4px;
   cursor: pointer;
-  transition: all 0.5s;
+  /* transition: all 0.5s; */
 }
 
 .custom-option:hover {
@@ -61,6 +65,7 @@
 
 .custom-option.selected {
   background-color: rgba(120, 153, 252, 0.1);
+  display: none;
 }
 
 .arrow {
@@ -76,27 +81,33 @@
   bottom: 0px;
   width: 0.1rem;
   height: 100%;
-  transition: all 0.5s;
+  /* transition: all 0.5s; */
 }
 
 .arrow::before {
   left: -2px;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
   background-color: #949494;
 }
 
 .arrow::after {
   left: 2px;
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
   background-color: #949494;
 }
 
 .open .arrow::before {
   left: -2px;
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
+  display: none;
 }
 
 .open .arrow::after {
   left: 2px;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
+  display: none;
+}
+
+.open {
+  border-bottom: none;
 }

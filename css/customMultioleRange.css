@@ -1,0 +1,61 @@
+:root {
+  --background-range: #7798fb;
+}
+
+.filter > div {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+}
+.filter > div > div {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.filter .slider {
+  margin-top: 10px;
+  position: relative;
+  height: 3px;
+  background: #d5e1eb;
+}
+.slider {
+  height: 3px;
+  border-radius: 2px;
+  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.08);
+  background-color: #d5e1eb;
+}
+.filter .color-range {
+  position: absolute;
+  background: var(--background-range, #000);
+  width: 95%;
+  border: none;
+  height: 3px;
+
+}
+.filter .block-min,
+.block-max {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 0;
+  top: -3.5px;
+  background: #fff;
+  box-shadow: 0 2px 5px 0 rgba(120, 153, 252, 0.4);
+  border: solid 2px #7899fc;
+  border-radius: 50%;
+  z-index: 1;
+  cursor: pointer;
+}
+.filter .block-max {
+  left: 95%;
+}

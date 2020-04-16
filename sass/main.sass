@@ -87,7 +87,7 @@ header
   justify-content: space-between
   padding: 16px
   font-size: 14px
-  max-width: 1300px
+  // max-width: 1300px
   padding-top: 0
   img
     height: 48px
@@ -123,7 +123,7 @@ header
   height: 72px
 
 .main-layout
-  max-width: 1300px
+  // max-width: 1300px
   margin: 0 auto
   display: flex
 .roi
@@ -172,9 +172,11 @@ header
   background-color: #ffffff
   &-item
     border-bottom: 1px solid #D4D4D4
+    font-family: 'Verdana'
     .control-label
-      padding: 15px
+      padding: 9px 15px
       font-size: 16px
+      line-height: 2.06
       img
         margin-right: 17px
       &-wide
@@ -182,7 +184,9 @@ header
           margin-right: 16px
     &:first-child
       padding: 12px 20px
+      padding-left: 14px
       button
+        font-family: 'Raleway'
         padding: 6px 30px
         border: 1px solid #7899fc
         text-transform: uppercase
@@ -190,6 +194,8 @@ header
         justify-content: space-between
         white-space: nowrap
         background-color: #ffffff
+        font-weight: 500
+        letter-spacing: 0.1px
         img
           margin-left: 8px
     &-dropdown
@@ -238,7 +244,7 @@ header
 
 #roi:checked ~ .roi
   display: block
-  
+
 .open-menu-item
   .dropdown
     display: block
@@ -408,7 +414,7 @@ main
   width: 100%
 
 .scrollable-block
-  height: 700px
+  height: 800px
   display: flex
   overflow: scroll
   .screen-block, .diagram-block
@@ -566,7 +572,7 @@ main
         font-size: 12px
         p
           white-space: nowrap
-          margin-top: 25px
+          margin-top: 15px
           margin-right: 35px
           letter-spacing: 1.75px
           color: #121212
@@ -577,11 +583,13 @@ main
           margin-top: 0
       aside
         flex-direction: start
+        span
+          white-space: nowrap
       &:last-child
         border-left: solid 1px #e7e9ea
 
 #dlg-wrap > section
-  margin-top: 30px
+  margin-top: 15px
   font-size: 14px
   p:last-child
     margin: 20px
@@ -691,6 +699,9 @@ main
       padding: 15px 12px
       display: flex
       align-items: center
+      >img.img-edit
+        margin-left: 10px
+        display: none
       .nested-level-icon
         display: flex
         padding-right: 12px
@@ -698,6 +709,10 @@ main
         background-color: rgba(213, 225, 235, 0.2)
         border-top: solid 1px #e7e9ea
         border-bottom: solid 1px #e7e9ea
+      &:hover
+        >img.img-edit
+          display: block
+          cursor: pointer
       >section
         display: none
     .open

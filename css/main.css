@@ -89,7 +89,6 @@ header {
   justify-content: space-between;
   padding: 16px;
   font-size: 14px;
-  max-width: 1300px;
   padding-top: 0; }
   header img {
     height: 48px;
@@ -125,7 +124,6 @@ header {
   height: 72px; }
 
 .main-layout {
-  max-width: 1300px;
   margin: 0 auto;
   display: flex; }
 
@@ -175,24 +173,30 @@ header {
   width: 300px;
   background-color: #ffffff; }
   .panel-controls-item {
-    border-bottom: 1px solid #D4D4D4; }
+    border-bottom: 1px solid #D4D4D4;
+    font-family: "Verdana"; }
     .panel-controls-item .control-label {
-      padding: 15px;
-      font-size: 16px; }
+      padding: 9px 15px;
+      font-size: 16px;
+      line-height: 2.06; }
       .panel-controls-item .control-label img {
         margin-right: 17px; }
       .panel-controls-item .control-label-wide img {
         margin-right: 16px; }
     .panel-controls-item:first-child {
-      padding: 12px 20px; }
+      padding: 12px 20px;
+      padding-left: 14px; }
       .panel-controls-item:first-child button {
+        font-family: "Raleway";
         padding: 6px 30px;
         border: 1px solid #7899fc;
         text-transform: uppercase;
         display: flex;
         justify-content: space-between;
         white-space: nowrap;
-        background-color: #ffffff; }
+        background-color: #ffffff;
+        font-weight: 500;
+        letter-spacing: 0.1px; }
         .panel-controls-item:first-child button img {
           margin-left: 8px; }
     .panel-controls-item-dropdown {
@@ -397,7 +401,7 @@ main {
   width: 100%; }
 
 .scrollable-block {
-  height: 700px;
+  height: 800px;
   display: flex;
   overflow: scroll; }
   .scrollable-block .screen-block, .scrollable-block .diagram-block {
@@ -552,7 +556,7 @@ main {
         font-size: 12px; }
         .device-info section > div div p, .device-info section > div aside p {
           white-space: nowrap;
-          margin-top: 25px;
+          margin-top: 15px;
           margin-right: 35px;
           letter-spacing: 1.75px;
           color: #121212;
@@ -563,11 +567,13 @@ main {
           margin-top: 0; }
       .device-info section > div aside {
         flex-direction: start; }
+        .device-info section > div aside span {
+          white-space: nowrap; }
       .device-info section > div:last-child {
         border-left: solid 1px #e7e9ea; }
 
 #dlg-wrap > section {
-  margin-top: 30px;
+  margin-top: 15px;
   font-size: 14px; }
   #dlg-wrap > section p:last-child {
     margin: 20px;
@@ -678,6 +684,9 @@ main {
   padding: 15px 12px;
   display: flex;
   align-items: center; }
+  .file-manager-list-item > img.img-edit {
+    margin-left: 10px;
+    display: none; }
   .file-manager-list-item .nested-level-icon {
     display: flex;
     padding-right: 12px; }
@@ -685,6 +694,9 @@ main {
     background-color: rgba(213, 225, 235, 0.2);
     border-top: solid 1px #e7e9ea;
     border-bottom: solid 1px #e7e9ea; }
+  .file-manager-list-item:hover > img.img-edit {
+    display: block;
+    cursor: pointer; }
   .file-manager-list-item > section {
     display: none; }
 .file-manager-list .open {

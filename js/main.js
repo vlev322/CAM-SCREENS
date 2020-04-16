@@ -23,11 +23,11 @@ for (const option of document.querySelectorAll(".custom-option")) {
 }
 
 window.addEventListener("click", function (e) {
-  for (const select of document.querySelectorAll(".custom-select")) {
-    if (!select.contains(e.target)) {
-      select.classList.remove("open");
-    }
-  }
+  // for (const select of document.querySelectorAll(".custom-select")) {
+  //   if (!select.contains(e.target)) {
+  //     select.classList.remove("open");
+  //   }
+  // }
   for (const menuItem of document.querySelectorAll(".panel-controls-item")) {
     if (!menuItem.contains(e.target)) {
       menuItem.classList.remove("open-menu-item");

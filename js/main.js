@@ -1,8 +1,14 @@
-// CUSTOM SELECTS START
+// CUSTOM SELECTS AND MENU START
 
 for (const dropdown of document.querySelectorAll(".custom-select-wrapper")) {
   dropdown.addEventListener("click", function () {
     this.querySelector(".custom-select").classList.toggle("open");
+  });
+}
+// Toggle menu item
+for (const menuItem of document.querySelectorAll(".panel-controls-item")) {
+  menuItem.addEventListener("click", function () {
+    this.classList.toggle("open-menu-item");
   });
 }
 
@@ -22,9 +28,16 @@ window.addEventListener("click", function (e) {
       select.classList.remove("open");
     }
   }
+  for (const menuItem of document.querySelectorAll(".panel-controls-item")) {
+    if (!menuItem.contains(e.target)) {
+      menuItem.classList.remove("open-menu-item");
+    }
+  }
 });
 
-// CUSTOM SELECTS END
+// CUSTOM SELECTS AND MENU END
+
+// CUSTOM MULTYRANGE
 
 function getCoords(elem) {
   /*Получаем координаты относительно окна браузера*/

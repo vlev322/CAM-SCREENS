@@ -179,6 +179,9 @@ header
       font-size: 16px
       img
         margin-right: 17px
+      &-wide
+        img
+          margin-right: 16px
     &:first-child
       padding: 12px 20px
       button
@@ -215,6 +218,7 @@ header
             font-size: 10px
             &:first-child
               margin-bottom: 10px
+
 .acqisition-stream
   p
     padding: 10px 0
@@ -230,30 +234,18 @@ header
       margin-bottom: 28px
       &:last-child
         margin: 0
-// Drop-down
-.dropdown, .roi, #camera, #calibration, #acqisition, #configure, #cube, #advanced, #gpio, #roi
+
+
+.dropdown, .roi, #roi
   display: none
 
-#camera:checked ~ .dropdown,
-#calibration:checked ~ .dropdown,
-#acqisition:checked ~ .dropdown,
-#configure:checked ~ .dropdown,
-#cube:checked ~ .dropdown,
-#advanced:checked ~ .dropdown,
-#gpio:checked ~ .dropdown,
-#roi:checked ~ .roi,
-  display: block
-
-#camera:checked ~ label .control-label,
-#calibration:checked ~ label .control-label,
-#acqisition:checked ~ label .control-label,
-#configure:checked ~ label .control-label,
-#cube:checked ~ label .control-label,
-#advanced:checked ~ label .control-label,
-#gpio:checked ~ label .control-label,
-  background: rgba(120, 153, 252, 0.1)
-  color: #7798FB
-  border-left: 4px solid #7798FB
+.open-menu-item
+  .dropdown
+    display: block
+  label .control-label
+      background: rgba(120, 153, 252, 0.1)
+      color: #7798FB
+      border-left: 4px solid #7798FB
 
 .btn-composition
   margin-bottom: 7px
@@ -527,7 +519,7 @@ main
   justify-content: center
 
 #dialog .large-dlg #dlg-wrap
-  padding: 40px 54px
+  padding: 20px 54px
   max-width: 720px
   min-width: 520px
   max-height: 100%

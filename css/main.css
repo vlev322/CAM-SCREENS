@@ -183,6 +183,8 @@ header {
       font-size: 16px; }
       .panel-controls-item .control-label img {
         margin-right: 17px; }
+      .panel-controls-item .control-label-wide img {
+        margin-right: 16px; }
     .panel-controls-item:first-child {
       padding: 12px 20px; }
       .panel-controls-item:first-child button {
@@ -235,26 +237,12 @@ header {
       .dropdown-gpio .selecting-gpio .custom-select-wrapper:last-child {
         margin: 0; }
 
-.dropdown, .roi, #camera, #calibration, #acqisition, #configure, #cube, #advanced, #gpio, #roi {
+.dropdown, .roi, #roi {
   display: none; }
 
-#camera:checked ~ .dropdown,
-#calibration:checked ~ .dropdown,
-#acqisition:checked ~ .dropdown,
-#configure:checked ~ .dropdown,
-#cube:checked ~ .dropdown,
-#advanced:checked ~ .dropdown,
-#gpio:checked ~ .dropdown,
-#roi:checked ~ .roi {
+.open-menu-item .dropdown {
   display: block; }
-
-#camera:checked ~ label .control-label,
-#calibration:checked ~ label .control-label,
-#acqisition:checked ~ label .control-label,
-#configure:checked ~ label .control-label,
-#cube:checked ~ label .control-label,
-#advanced:checked ~ label .control-label,
-#gpio:checked ~ label .control-label {
+.open-menu-item label .control-label {
   background: rgba(120, 153, 252, 0.1);
   color: #7798FB;
   border-left: 4px solid #7798FB; }
@@ -516,7 +504,7 @@ main {
   justify-content: center; }
 
 #dialog .large-dlg #dlg-wrap {
-  padding: 40px 54px;
+  padding: 20px 54px;
   max-width: 720px;
   min-width: 520px;
   max-height: 100%;

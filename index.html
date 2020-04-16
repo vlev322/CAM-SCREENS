@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Screens Cam</title>
+    <!-- Fonts -->
     <link rel="stylesheet" href="./assets/fonts/Verdana/verdana.css" />
+    <link rel="stylesheet" href="./assets/fonts/Raleway/raleway.css" />
+    <!-- All stylesheets -->
     <link rel="stylesheet" href="css/modals.css" />
     <link rel="stylesheet" href="css/customSelect.css" />
     <link rel="stylesheet" href="css/input-range.css" />
     <link rel="stylesheet" href="css/multirange.css" />
     <link rel="stylesheet" href="css/customMultioleRange.css" />
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
@@ -34,13 +38,13 @@
           <!-- Panel Controls START-->
           <div class="panel-controls">
             <div class="panel-controls-item">
-              <button>Camera Setup Wizard <img src="./assets/img/icons/vector/back-wizard.svg" alt="" /></button>
+              <button>Camera Setup Wizard<img src="./assets/img/icons/vector/back-wizard.svg" alt="" /></button>
             </div>
 
             <!-- Camera Setup -->
             <div class="panel-controls-item">
               <label class="forclick">
-                <div class="control-label"><img src="./assets/img/icons/vector/optical-setup.svg" alt="" />Camera Setup</div>
+                <div class="control-label"><img src="./assets/img/icons/vector/optical-setup.svg" alt="" />Camera Settings</div>
               </label>
               <div class="panel-controls-item-dropdown dropdown camera-setup">
                 <section>
@@ -286,7 +290,7 @@
                   </div>
                   <div class="search">
                     <input type="text" placeholder="SEARCH" />
-                    <img src="./assets/img/icons/vector/search.svg" alt="search" />
+                    <img src="./assets/img/icons/vector/search.svg" class="img-edit" alt="search" />
                   </div>
 
                   <div class="file-manager-header-selected-button">
@@ -296,11 +300,12 @@
                 <section class="file-manager-list">
                   <div class="file-manager-list-item">
                     <div class="nested-level-icon">
-                      <input type="checkbox" id="selector" />
+                      <input type="checkbox" checked id="selector" />
                       <label class="select-circle" for="selector"><div class="selected"></div></label>
                       <img src="./assets/img/icons/vector/combined-folder.svg" alt="icon" />
                     </div>
                     <p>Train Data Folder 1</p>
+                    <img src="./assets/img/icons/vector/edit.svg" class="img-edit" alt="edit">
                   </div>
                   <div class="file-manager-list-item">
                     <div class="nested-level-icon">
@@ -309,6 +314,8 @@
                       <img src="./assets/img/icons/vector/combined-folder.svg" alt="icon" />
                     </div>
                     <p>Train Data Folder 2</p>
+                    <img src="./assets/img/icons/vector/edit.svg" class="img-edit" alt="edit">
+
                   </div>
                   <div class="wrapper-file-manager">
                     <div class="file-manager-list-item open">
@@ -350,6 +357,8 @@
                       <img src="./assets/img/icons/vector/combined-folder.svg" alt="icon" />
                     </div>
                     <p>Train Data Folder 4</p>
+                    <img src="./assets/img/icons/vector/edit.svg" class="img-edit" alt="edit">
+
                   </div>
                 </section>
                 <section class="file-manager-footer">
@@ -365,7 +374,7 @@
             <!-- Advanced -->
             <div class="panel-controls-item">
               <label class="forclick">
-                <div class="control-label"><img src="./assets/img/icons/vector/advanced.svg" alt="" />Advanced</div>
+                <div class="control-label"><img src="./assets/img/icons/vector/advanced.svg" alt="" />Advanced Settings</div>
               </label>
               <div class="panel-controls-item-dropdown dropdown">
                 <div class="control-btn-advanced">
@@ -444,6 +453,7 @@
                 <button class="btn-large">Save Settings</button>
               </div>
             </div>
+            <!-- <label class="dlg-restore">Dialog restore</label> -->
           </div>
           <!-- Panel Controls END-->
 
@@ -483,12 +493,13 @@
         </div>
       </div>
     </div>
+
     <div id="dialog">
       <label id="dlg-back" for="dialog_state"></label>
 
       <!-- Modal onfirmation restore setup  -->
       <!-- <div class="small-dlg">
-        <div id="dlg-wrap" class="small-dlg">
+        <div id="dlg-restore" class="small-dlg">
           <div class="modal-body">
             <div>
               <div class="circle-check"></div>
@@ -497,7 +508,7 @@
           </div>
           <div class="modal-fotter">
             <button>restore</button>
-            <button><label for="dialog_state">cancel</label></button>
+            <button><label for="dlg-restore">cancel</label></button>
           </div>
         </div>
       </div> -->
@@ -646,6 +657,7 @@
           </section>
         </div>
       </div>
+
     </div>
     <script src="./js/multirange.js"></script>
     <script src="./js/main.js"></script>

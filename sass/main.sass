@@ -92,15 +92,13 @@ header
   img
     height: 48px
     width: auto
-  .info
-    align-items: start
-    color: #7799fc
+  div:last-child
     display: flex
     justify-content: space-between
-    div:first-child
-      padding-right: 20px
-      margin-right: 20px
-      border-right: 1px solid #D4D4D4
+    label
+      color: #7799fc
+      margin-right: 110px
+      cursor: pointer
 
 .sub-title
   border-bottom: 1px solid #D4D4D4
@@ -235,7 +233,6 @@ header
       &:last-child
         margin: 0
 
-
 .dropdown, .roi, #roi
   display: none
 
@@ -243,9 +240,9 @@ header
   .dropdown
     display: block
   label .control-label
-      background: rgba(120, 153, 252, 0.1)
-      color: #7798FB
-      border-left: 4px solid #7798FB
+    background: rgba(120, 153, 252, 0.1)
+    color: #7798FB
+    border-left: 4px solid #7798FB
 
 .btn-composition
   margin-bottom: 7px

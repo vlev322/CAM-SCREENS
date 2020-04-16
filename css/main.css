@@ -94,15 +94,13 @@ header {
   header img {
     height: 48px;
     width: auto; }
-  header .info {
-    align-items: start;
-    color: #7799fc;
+  header div:last-child {
     display: flex;
     justify-content: space-between; }
-    header .info div:first-child {
-      padding-right: 20px;
-      margin-right: 20px;
-      border-right: 1px solid #D4D4D4; }
+    header div:last-child label {
+      color: #7799fc;
+      margin-right: 110px;
+      cursor: pointer; }
 
 .sub-title {
   border-bottom: 1px solid #D4D4D4;

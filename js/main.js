@@ -6,9 +6,18 @@ for (const dropdown of document.querySelectorAll(".custom-select-wrapper")) {
   });
 }
 // Toggle menu item
-for (const menuItem of document.querySelectorAll(".panel-controls-item")) {
+for (const menuItem of document.querySelectorAll(".forclick")) {
   menuItem.addEventListener("click", function () {
-    this.classList.toggle("open-menu-item");
+    if (menuItem.parentNode.classList.contains("open-menu-item")) {
+      menuItem.parentNode.classList.toggle("open-menu-item");
+    } else {
+      for (const item of document.querySelectorAll(".forclick")) {
+        if (item.parentNode.classList.contains("open-menu-item")) {
+          item.parentNode.classList.remove("open-menu-item");
+        }
+      }
+      menuItem.parentNode.classList.toggle("open-menu-item");
+    }
   });
 }
 
@@ -23,16 +32,16 @@ for (const option of document.querySelectorAll(".custom-option")) {
 }
 
 window.addEventListener("click", function (e) {
-  // for (const select of document.querySelectorAll(".custom-select")) {
-  //   if (!select.contains(e.target)) {
-  //     select.classList.remove("open");
-  //   }
-  // }
-  for (const menuItem of document.querySelectorAll(".panel-controls-item")) {
-    if (!menuItem.contains(e.target)) {
-      menuItem.classList.remove("open-menu-item");
+  for (const select of document.querySelectorAll(".custom-select")) {
+    if (!select.contains(e.target)) {
+      select.classList.remove("open");
     }
   }
+  // for (const menuItem of document.querySelectorAll(".panel-controls-item")) {
+  //   if (!menuItem.contains(e.target)) {
+  //     menuItem.classList.remove("open-menu-item");
+  //   }
+  // }
 });
 
 // CUSTOM SELECTS AND MENU END
@@ -144,7 +153,7 @@ function moveRange(elem) {
 
     /*Для красоты слайдера уберем вывод значений в начальной и конечной точках*/
     // if (value <= rangeMin) {
-      indicator.innerHTML = "";
+    indicator.innerHTML = "";
     // } else if (value >= rangeMax) {
     //   indicator.innerHTML = "";
     // } else {

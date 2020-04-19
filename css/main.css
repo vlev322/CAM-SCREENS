@@ -401,7 +401,7 @@ main {
   width: 100%; }
 
 .scrollable-block {
-  height: 800px;
+  height: 710px;
   display: flex;
   overflow: scroll; }
   .scrollable-block .screen-block, .scrollable-block .diagram-block {
@@ -456,7 +456,7 @@ main {
     border: solid 1px #d5e1eb;
     border-bottom: none; }
 
-.small-dlg, .large-dlg {
+.large-dlg, .dlg-wrapper {
   position: absolute;
   top: 0;
   right: 0;
@@ -465,23 +465,29 @@ main {
   max-width: 1440px;
   width: 100vw;
   height: 100vh;
-  cursor: pointer;
   margin: 0 auto; }
 
-#dialog .small-dlg #dlg-wrap {
+.dlg-wrapper {
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center; }
+
+.small-dlg {
   height: 300px;
   width: 500px;
-  min-width: 400px; }
-
-.small-dlg #dlg-wrap {
-  margin: 0 auto; }
-  .small-dlg #dlg-wrap .modal-fotter {
+  min-width: 400px;
+  background-color: #fff;
+  margin: auto;
+  margin: 0 auto;
+  border-radius: 3px; }
+  .small-dlg .modal-fotter {
     padding: 13px 140px;
     border-top: 1px solid #d5e1eb;
     display: flex;
     align-items: center;
-    justify-content: space-between; }
-    .small-dlg #dlg-wrap .modal-fotter button {
+    justify-content: space-between;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15); }
+    .small-dlg .modal-fotter button {
       padding: 6px 19px;
       text-transform: uppercase;
       color: #374049;
@@ -489,23 +495,23 @@ main {
       font-size: 11px;
       background-color: #ffffff;
       border: solid 1px #7899fc; }
-  .small-dlg #dlg-wrap .modal-body {
+  .small-dlg .modal-body {
     height: 246px;
     display: flex; }
-    .small-dlg #dlg-wrap .modal-body > div {
+    .small-dlg .modal-body > div {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
       margin: 0 auto;
       padding: 30px 0;
       align-items: center; }
-    .small-dlg #dlg-wrap .modal-body .circle-check {
+    .small-dlg .modal-body .circle-check {
       width: 50px;
       height: 50px;
       border: 3px solid #7899fc;
       border-radius: 50%; }
 
-.small-dlg #dlg-wrap .flex-center {
+.small-dlg .flex-center {
   justify-content: center; }
 
 #dialog .large-dlg #dlg-wrap {
@@ -759,5 +765,16 @@ main {
   .file-manager-footer label {
     padding: 3px 20px;
     cursor: pointer; }
+
+.blur {
+  filter: blur(6px);
+  background-color: #000;
+  background-color: #012237; }
+
+.visible {
+  visibility: visible; }
+
+.state_dlg {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,12 +1,12 @@
 #dialog {
+  /* z-index: 4; */
   position: absolute;
-  z-index: 4;
   top: 0;
   left: 0;
   width: 100%;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.01);
+  background: rgba(0, 0, 0, 0.4);
   opacity: 0;
   visibility: hidden;
 }
@@ -26,8 +26,7 @@
   opacity: 1;
 }
 
-.dialog_state:checked ~ .main_area,
-.main_area.dialog_open {
+.dialog_state:checked ~ .main_area {
   filter: blur(6px);
 }
 #dlg-back {

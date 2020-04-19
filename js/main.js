@@ -37,14 +37,39 @@ window.addEventListener("click", function (e) {
       select.classList.remove("open");
     }
   }
-  // for (const menuItem of document.querySelectorAll(".panel-controls-item")) {
-  //   if (!menuItem.contains(e.target)) {
-  //     menuItem.classList.remove("open-menu-item");
-  //   }
-  // }
 });
 
 // CUSTOM SELECTS AND MENU END
+
+//Opening dialogs
+
+const main_wrapper = document.getElementById("main");
+
+const dlg_success = document.getElementById("dlg_success");
+const dlg_restore = document.getElementById("dlg_restore");
+
+const open_dlg_restore = document.getElementById("open_dlg_restore");
+const open_dlg_success = document.getElementById("open_dlg_success");
+
+const dlgs = [dlg_success, dlg_restore];
+
+for (const cls_dlg of document.querySelectorAll(".close_dlg")) {
+  cls_dlg.addEventListener("click", function () {
+    for (const dlg of dlgs) {
+      dlg.classList.add("state_dlg");
+      main_wrapper.classList.remove("blur");
+    }
+  });
+}
+open_dlg_restore.addEventListener("click", function (e) {
+  dlg_restore.classList.toggle("state_dlg");
+  main_wrapper.classList.toggle("blur");
+});
+
+open_dlg_success.addEventListener("click", function (e) {
+  dlg_success.classList.toggle("state_dlg");
+  main_wrapper.classList.toggle("blur");
+});
 
 // CUSTOM MULTYRANGE
 

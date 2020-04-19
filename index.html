@@ -217,7 +217,7 @@
             <div class="panel-controls-item">
               <label class="forclick">
                 <div class="control-label control-label-wide"><img src="./assets/img/icons/vector/confuguration.svg" alt="" />Configure Model</div>
-              </label class="forclick">
+              </label>
               <div class="panel-controls-item-dropdown dropdown">
                 <div class="selecting-model">
                   <div class="custom-select-wrapper">
@@ -305,7 +305,7 @@
                       <img src="./assets/img/icons/vector/combined-folder.svg" alt="icon" />
                     </div>
                     <p>Train Data Folder 1</p>
-                    <img src="./assets/img/icons/vector/edit.svg" class="img-edit" alt="edit">
+                    <img src="./assets/img/icons/vector/edit.svg" class="img-edit" alt="edit" />
                   </div>
                   <div class="file-manager-list-item">
                     <div class="nested-level-icon">
@@ -314,8 +314,7 @@
                       <img src="./assets/img/icons/vector/combined-folder.svg" alt="icon" />
                     </div>
                     <p>Train Data Folder 2</p>
-                    <img src="./assets/img/icons/vector/edit.svg" class="img-edit" alt="edit">
-
+                    <img src="./assets/img/icons/vector/edit.svg" class="img-edit" alt="edit" />
                   </div>
                   <div class="wrapper-file-manager">
                     <div class="file-manager-list-item open">
@@ -357,8 +356,7 @@
                       <img src="./assets/img/icons/vector/combined-folder.svg" alt="icon" />
                     </div>
                     <p>Train Data Folder 4</p>
-                    <img src="./assets/img/icons/vector/edit.svg" class="img-edit" alt="edit">
-
+                    <img src="./assets/img/icons/vector/edit.svg" class="img-edit" alt="edit" />
                   </div>
                 </section>
                 <section class="file-manager-footer">
@@ -453,6 +451,8 @@
                 <button class="btn-large">Save Settings</button>
               </div>
             </div>
+            <button id="open_dlg_restore">Open dialog "restore"</button>
+            <button id="open_dlg_success">Open dialog "success"</button>
             <!-- <label class="dlg-restore">Dialog restore</label> -->
           </div>
           <!-- Panel Controls END-->
@@ -494,40 +494,38 @@
       </div>
     </div>
 
+    <!-- Modal onfirmation restore setup  -->
+    <div id="dlg_restore" class="dlg-wrapper state_dlg">
+      <div class="small-dlg">
+        <div class="modal-body">
+          <div>
+            <img src="./assets/img/icons/vector/icon-question.svg" alt="" />
+            <p>Are you sure you want to Restore Setup Wizard?</p>
+          </div>
+        </div>
+        <div class="modal-fotter">
+          <button>restore</button>
+          <button class="close_dlg">cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Training data successfully saved! -->
+    <div id="dlg_success" class="dlg-wrapper state_dlg">
+      <div class="small-dlg">
+        <div class="modal-body">
+          <div>
+            <img src="./assets/img/icons/vector/icon-done.svg" alt="" />
+            <p>Training data successfully saved!</p>
+          </div>
+        </div>
+        <div class="modal-fotter flex-center">
+          <button class="close_dlg">done</button>
+        </div>
+      </div>
+    </div>
+
     <div id="dialog">
-      <label id="dlg-back" for="dialog_state"></label>
-
-      <!-- Modal onfirmation restore setup  -->
-      <!-- <div class="small-dlg">
-        <div id="dlg-restore" class="small-dlg">
-          <div class="modal-body">
-            <div>
-              <div class="circle-check"></div>
-              <p>Are you sure you want to Restore Setup Wizard?</p>
-            </div>
-          </div>
-          <div class="modal-fotter">
-            <button>restore</button>
-            <button><label for="dlg-restore">cancel</label></button>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- Training data successfully saved! -->
-      <!-- <div class="small-dlg">
-        <div id="dlg-wrap" class="small-dlg">
-          <div class="modal-body">
-            <div>
-              <div class="circle-check"></div>
-              <p>Training data successfully saved!</p>
-            </div>
-          </div>
-          <div class="modal-fotter flex-center">
-            <button><label for="dialog_state">done</label></button>
-          </div>
-        </div>
-      </div> -->
-
       <!-- Are you sure you don’t want to Save Settings? -->
       <!-- <div class="small-dlg">
         <div id="dlg-wrap" class="small-dlg">
@@ -657,7 +655,6 @@
           </section>
         </div>
       </div>
-
     </div>
     <script src="./js/multirange.js"></script>
     <script src="./js/main.js"></script>

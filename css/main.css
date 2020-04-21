@@ -280,6 +280,7 @@ header {
     margin-bottom: 10px; }
   .camera-setup > section .range-inputs {
     display: flex;
+    align-items: center;
     margin-top: 5px;
     position: relative; }
     .camera-setup > section .range-inputs input {

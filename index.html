@@ -10,7 +10,7 @@
     <!-- All stylesheets -->
     <link rel="stylesheet" href="css/modals.css" />
     <link rel="stylesheet" href="css/customSelect.css" />
-    <link rel="stylesheet" href="css/input-range.css" />
+    <link rel="stylesheet" href="css/customInputRange.css" />
     <link rel="stylesheet" href="css/multirange.css" />
     <link rel="stylesheet" href="css/customMultioleRange.css" />
     <!-- Main stylesheet -->
@@ -50,7 +50,7 @@
                 <section>
                   <p>Exposure</p>
                   <div class="range-inputs">
-                    <input type="range" value="50" max="300" />
+                    <input class="input_range" type="range" value="80" min="10" max="100" step="1" />
                     <span>ms</span>
                     <input type="text" />
                   </div>
@@ -58,7 +58,7 @@
                 <section>
                   <p>Frame Period</p>
                   <div class="range-inputs">
-                    <input type="range" value="50" max="300" />
+                    <input class="input_range" type="range" value="80" min="10" max="100" step="1" />
                     <span>ms</span>
                     <input type="text" />
                   </div>
@@ -480,7 +480,8 @@
                   </div>
                   <div class="main-layout-header-brightness">
                     <p>Brightness</p>
-                    <input type="range" />
+                    <input class="input_range" type="range" value="80" min="10" max="100" step="1" />
+                    <input type="text" value="80" size="3" />
                   </div>
                 </div>
                 <section class="screen-block"></section>
@@ -658,5 +659,6 @@
     </div>
     <script src="./js/multirange.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/customInputRange.js"></script>
   </body>
 </html>

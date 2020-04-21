@@ -87,8 +87,8 @@ header
   justify-content: space-between
   padding: 16px
   font-size: 14px
-  // max-width: 1300px
   padding-top: 0
+  padding-right: 32px
   img
     height: 48px
     width: auto
@@ -99,6 +99,7 @@ header
       color: #7799fc
       margin-right: 110px
       cursor: pointer
+      font-size: 16px
 
 .sub-title
   border-bottom: 1px solid #D4D4D4
@@ -421,6 +422,12 @@ main
     background-color: #fff
     height: 500px
     margin-top: 30px
+  .screen-block
+    background: #7899fc
+    position: relative
+    &-warn
+      background-color: #ff5a5a
+
   .diagram-block
     height: 200px
   &-aside
@@ -431,6 +438,75 @@ main
   &-main-layout
     width: 80%
     margin-right: 30px
+.screen-block
+  &-state
+    text-transform: uppercase
+    border-radius: 3px
+    color: #ffffff
+    position: absolute
+    bottom: 10px
+    left: 50%
+    padding: 3px 12px
+    cursor: pointer
+    text-align: center
+    background: rgba(255,245,215,0.1)
+
+  &-header,.play-manage-block
+    color: #ffffff
+    padding-bottom: 0
+    display: flex
+    align-items: center
+    justify-content: space-between
+  &-header
+    padding: 2px 16px
+    font-size: 12px
+    font-family: 'Raleway'
+    p
+      &:first-child
+        margin-right: 100px
+      &:last-child
+        flex-grow: 1
+        text-align: right
+        cursor: pointer
+.screen-block-warn
+  .screen-block-header
+    font-size: 14px
+    padding: 5px 41px
+    p
+      margin-left: 90px
+    button
+      font-family: 'Raleway'
+      cursor: pointer
+      letter-spacing: 0.1em
+      color: #ffffff
+      text-transform: uppercase
+      font-size: 11px
+      border-radius: 3px
+      border: 1px solid #fff
+      padding: 7px 12px
+      background: #ff5a5a
+      min-width: 68px
+      margin-left: 46px
+      &:hover
+        background-color: #ffffff
+        color: #ff5a5a
+
+.play-manage-block
+  background-color: rgba(255, 255, 255, 0.2)
+  font-size: 11px
+  div
+    padding: 13px 10px
+    display: flex
+    align-items: center
+    cursor: pointer
+    &:hover
+      background-color: #ed4f4f
+    span
+      text-transform: uppercase
+      font-size: 11px
+      margin-left: 12px
+  &-active
+    background-color: #ed4f4f
 
 .main-layout-header
   display: flex
@@ -457,6 +533,14 @@ main
       text-transform: none
       letter-spacing: normal
       opacity: 1
+    input[type=text]
+      font-size: 12px
+      font-family: 'Lato'
+      margin-left: 10px
+      width: 25px
+    span
+      color: #949494
+      font-size: 10px
   &-params
     p
       white-space: nowrap
@@ -529,7 +613,6 @@ main
 
 .small-dlg .flex-center
   justify-content: center
-
 
 #dialog .large-dlg #dlg-wrap
   padding: 20px 54px

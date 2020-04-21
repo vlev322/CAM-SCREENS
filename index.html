@@ -7,6 +7,7 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="./assets/fonts/Verdana/verdana.css" />
     <link rel="stylesheet" href="./assets/fonts/Raleway/raleway.css" />
+    <link rel="stylesheet" href="./assets/fonts/Lato/lato.css" />
     <!-- All stylesheets -->
     <link rel="stylesheet" href="css/modals.css" />
     <link rel="stylesheet" href="css/customSelect.css" />
@@ -364,7 +365,7 @@
                     <button class="button">export</button>
                     <button class="button">delete</button>
                   </div>
-                  <label class="button" for="cube">cancel</label>
+                  <label class="forclick button" for="cube">cancel</label>
                 </section>
               </div>
             </div>
@@ -482,9 +483,32 @@
                     <p>Brightness</p>
                     <input class="input_range" type="range" value="80" min="10" max="100" step="1" />
                     <input type="text" value="80" size="3" />
+                    <span>%</span>
                   </div>
                 </div>
-                <section class="screen-block"></section>
+                <!-- Casual -->
+
+                <section class="screen-block">
+                  <div class="screen-block-header">
+                    <p>Capturing [ 00:00:00 / 297.7 KB ]</p>
+                    <div class="play-manage-block">
+                      <div><img src="./assets/img/icons/vector/pause.svg" alt="pause" /><span>pause</span></div>
+                      <div class="play-manage-block-active" ><img src="./assets/img/icons/vector/play.svg" alt="play" /><span>start</span></div>
+                      <div><img src="./assets/img/icons/vector/save.svg" alt="save" /><span>save</span></div>
+                    </div>
+                    <p>Cancel</p>
+                  </div>
+                  <div class="screen-block-state">► play</div>
+                </section>
+
+                <!-- WARNING -->
+                <!-- <section class="screen-block screen-block-warn">
+                  <div class="screen-block-header">
+                    <p>Please, place white referance ( i )</p>
+                    <div><button>cancel</button><button>done</button></div>
+                  </div>
+                </section> -->
+
                 <section class="diagram-block"></section>
               </section>
               <aside class="scrollable-block-aside"></aside>

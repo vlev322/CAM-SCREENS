@@ -286,9 +286,9 @@ header
       margin-top: 5px
       position: relative
       input
-        padding-left: 5px
+        padding-left: 2px
         &:last-child
-          width: 44px
+          width: 45px
           height: 20px
           border-radius: 3px
           border: solid 1px #d5e1eb
@@ -298,7 +298,7 @@ header
       span
         content: 'ms'
         position: absolute
-        right: 8px
+        right: 9px
         top: 3px
         font-size: 10px
         color: #949494
@@ -354,6 +354,7 @@ header
   .btn-composition
     margin: 0
   section
+    font-size: 12px
     border-radius: 3px
     background-color: rgba(215, 225, 234, 0.3)
     display: flex
@@ -363,7 +364,17 @@ header
     border-top-left-radius: 3px
     >div
       p
-        margin: 7px 0
+        margin: 9px 0
+        height: 20px
+        &:first-child
+          margin-top: 0
+  &-dropdowns
+    width: 110px
+    input
+      height: 20px
+      background: transparent
+      border-bottom: solid 1px #e7e9ea
+      width: 110px
   .custom-select__trigger
     background-color: transparent
     font-size: 12px
@@ -420,13 +431,13 @@ main
   overflow: scroll
   .screen-block, .diagram-block
     background-color: #fff
-    height: 500px
+    height: 440px
     margin-top: 22px
+    max-width: 800px
+    min-width: 700px
   .screen-block
     background: #7899fc
     position: relative
-    width: 700px
-    height: 440px
     &-warn
       background-color: #ff5a5a
 
@@ -436,9 +447,9 @@ main
     margin-top: 90px
     background-color: #ffffff
     width: 140px
-    height: 500px
+    height: 440px
   &-main-layout
-    width: 80%
+    // width: 80%
     margin-right: 30px
 .screen-block
   &-state
@@ -890,3 +901,5 @@ main
 
 .state_dlg
   display: none
+.pos-center
+  padding-left: 25px

@@ -1,0 +1,278 @@
+.roi
+  margin-bottom: 15px
+  .filter
+    margin: 10px
+    margin-bottom: 20px
+    section
+      position: relative
+      span
+        position: absolute
+        right: 5px
+        top: 4px
+        font-size: 10px
+        color: #949494
+    .slider
+      width: 60px
+      margin: 0 5px
+      margin-right: 5px
+      span
+        position: absolute
+        font-size: 10px
+        color: $text-c
+        top: -20px
+        left: 7px
+    input
+      padding-left: 3px
+      width: 45px
+      height: 20px
+      border-radius: 3px
+      border: solid 1px $bdr-c
+
+.roi-checker
+  text-transform: uppercase
+  padding: 5px 0
+  margin-top: 15px
+  margin-bottom: 15px
+  border-bottom: solid 1px $bdr-c
+.panel-controls
+  width: 315px
+  background-color: #ffffff
+  &-item
+    border-bottom: 1px solid #D4D4D4
+    font-family: 'Verdana'
+    .control-label
+      padding: 9px 15px
+      font-size: 16px
+      line-height: 2.06
+      img
+        margin-right: 17px
+      &-wide
+        img
+          margin-right: 16px
+    &:first-child
+      padding: 12px 20px
+      padding-left: 14px
+      button
+        font-family: 'Raleway'
+        padding: 6px 30px
+        border: 1px solid $accent
+        text-transform: uppercase
+        display: flex
+        justify-content: space-between
+        white-space: nowrap
+        background-color: #ffffff
+        font-weight: 500
+        letter-spacing: 0.1px
+        img
+          margin-left: 8px
+    &-dropdown
+      background-color: #fafbfd
+      font-size: 14px
+      padding: 20px 11px 15px 50px
+      .acqisition
+        padding-bottom: 10px
+        border-bottom: solid 1px $bdr-c
+        &-control
+          display: flex
+          flex-direction: column
+          p
+            padding: 7px 0
+        &-select-small
+          display: flex
+          flex-direction: column
+          .custom-select-wrapper
+            width: 40px
+            font-size: 10px
+            &:first-child
+              margin-bottom: 10px
+
+.acqisition-stream
+  p
+    padding: 10px 0
+
+.dropdown-gpio
+  padding: 0
+  .selecting-gpio
+    padding: 20px 11px 28px 50px
+    p
+      margin-left: 5px
+      margin-bottom: 5px
+    .custom-select-wrapper
+      margin-bottom: 28px
+      &:last-child
+        margin: 0
+
+.dropdown, .roi, #roi
+  display: none
+
+#roi:checked ~ .roi
+  display: block
+
+.open-menu-item
+  .dropdown
+    display: block
+  label .control-label
+    background: rgba(120, 153, 252, 0.1)
+    color: #7798FB
+    border-left: 4px solid #7798FB
+    padding-left: 11px
+
+.btn-composition
+  margin-bottom: 7px
+  button
+    width: 100%
+    height: 29px
+    border: solid 1px $accent
+    background-color: rgba(215, 225, 234, 0.3)
+    font-size: 14px
+    font-weight: 400
+    &:active
+      background-color: $accent
+  span
+    font-size: 7px
+    color: #949494
+    white-space: nowrap
+    img
+      margin-right: 5px
+  &-warning
+    margin-top: 22px
+    button
+      border: solid 1px $warn
+
+.camera-setup
+  padding-top: 15px
+  >section
+    &:first-child
+      margin-bottom: 10px
+    .range-inputs
+      display: flex
+      align-items: center
+      margin-top: 5px
+      position: relative
+      input
+        padding-left: 2px
+        &:last-child
+          width: 45px
+          height: 20px
+          border-radius: 3px
+          border: solid 1px $bdr-c
+          margin-left: 10px
+          &:focus, &:active
+            border: solid 1px $accent
+      span
+        content: 'ms'
+        position: absolute
+        right: 9px
+        top: 3px
+        font-size: 10px
+        color: #949494
+
+.ref-exp-wrapper
+  padding-top: 15px
+  border-top: 1px solid #D4D4D4
+  font-weight: 100
+  p
+    font-size: 12px
+    font-weight: 100
+    white-space: nowrap
+  input
+    width: 50px
+    height: 20px
+    border: solid 1px $bdr-c
+    padding-right: 14px
+    padding-left: 13px
+  div
+    position: relative
+    span
+      position: absolute
+      right: 5px
+      top: 5px
+      font-size: 10px
+      color: #949494
+
+.selecting-model
+  padding-bottom: 20px
+  border-bottom: solid 1px $bdr-c
+  label
+    cursor: pointer
+    font-size: 12px
+    height: 30px
+    border-radius: 3px
+    border: solid 1px $accent
+    width: 100%
+    margin-top: 25px
+    img
+      margin-right: 10px
+  >p
+    margin-bottom: 5px
+
+  input[type="file"]
+    display: none
+
+.collecting-data
+  .btn-composition
+    margin: 0
+  section
+    font-size: 12px
+    border-radius: 3px
+    background-color: rgba(215, 225, 234, 0.3)
+    display: flex
+    justify-content: space-between
+    padding: 15px 11px
+    border-top-right-radius: 3px
+    border-top-left-radius: 3px
+    >div
+      p
+        margin: 9px 0
+        height: 20px
+        &:first-child
+          margin-top: 0
+  &-dropdowns
+    width: 110px
+    input
+      height: 20px
+      background: transparent
+      border-bottom: solid 1px $bdr-c
+      width: 110px
+  .custom-select__trigger
+    background-color: transparent
+    font-size: 12px
+  .open
+    .custom-select__trigger
+      border: solid 1px $bdr-c
+      border-bottom-color: #fff
+      border-top-color: #fff
+      background: #ffffff
+      font-size: 10px
+  .custom-select
+    border: none
+    border-bottom: 1px solid $bdr-c
+    font-size: 10px
+    position: relative
+
+.frames-block
+  .open
+    .custom-select__trigger
+      span:after
+        content : "frames"
+        position: absolute
+        right: 2px
+        color: $text-c
+        opacity: 0.5
+        font-size: 10px
+  .custom-select
+    span:after
+      content : "frames"
+      position: absolute
+      right: 2px
+      color: $text-c
+      opacity: 0.5
+      font-size: 10px
+
+.control-btn-advanced
+  padding-bottom: 5px
+
+.custom-select
+  .custom-select__trigger
+    span:after
+      content: none

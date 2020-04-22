@@ -1,3 +1,8 @@
+@import './theme'
+@import './file-manager'
+@import './menu'
+@import './modals'
+
 *
   box-sizing: border-box
 html
@@ -5,7 +10,7 @@ html
 
 body
   font-size: 16px
-  color: #374049
+  color: $text-c
   line-height: 1.5
   background-color: #fff
   font-family: 'Verdana'
@@ -45,16 +50,25 @@ p, body
   padding: 0
   margin: 0
 
+.flex-sb
+  display: flex
+  align-items: center
+  justify-content: space-between
+.flex-c
+  display: flex
+  align-items: center
+  justify-content: center
+
 .lines-around
   overflow: hidden
   text-align: center
 
 .accent-color
-  color: #7899fc
+  color: $accent
 
 .lines-around:before,
 .lines-around:after
-  background-color: #e7e9ea
+  background-color: $bdr-c
   content: ""
   display: inline-block
   height: 2px
@@ -90,20 +104,11 @@ header
     height: 48px
     width: auto
   div:last-child
-    display: flex
-    align-items: center
-    justify-content: space-between
     label
-      color: #7799fc
+      color: $accent
       margin-right: 110px
       cursor: pointer
       font-size: 16px
-
-.sub-title
-  border-bottom: 1px solid #D4D4D4
-  padding: 10px 0
-  p
-    text-transform: uppercase
 
 .sub-title-lower
   padding-bottom: 5px
@@ -111,12 +116,9 @@ header
   border-bottom: 1px solid #D4D4D4
 
 .btn-large
-  display: flex
-  align-items: center
-  justify-content: center
-  background-color: #7899fc
+  background-color: $accent
   color: #ffffff
-  border: solid 1px #7899fc
+  border: solid 1px $accent
   font-size: 14px
   width: 100%
   height: 72px
@@ -124,299 +126,6 @@ header
 .main-layout
   margin: 0 auto
   display: flex
-.roi
-  margin-bottom: 15px
-  .filter
-    display: flex
-    align-items: center
-    justify-content: space-between
-    margin: 10px
-    margin-bottom: 20px
-    section
-      position: relative
-      span
-        position: absolute
-        right: 5px
-        top: 4px
-        font-size: 10px
-        color: #949494
-    .slider
-      width: 60px
-      margin: 0 5px
-      margin-right: 5px
-      span
-        position: absolute
-        font-size: 10px
-        color: #374049
-        top: -20px
-        left: 7px
-    input
-      padding-left: 3px
-      width: 45px
-      height: 20px
-      border-radius: 3px
-      border: solid 1px #d5e1eb
-
-.roi-checker
-  display: flex
-  align-items: center
-  justify-content: space-between
-  text-transform: uppercase
-  padding: 5px 0
-  margin-top: 15px
-  margin-bottom: 15px
-  border-bottom: solid 1px #e7e9ea
-.panel-controls
-  width: 315px
-  background-color: #ffffff
-  &-item
-    border-bottom: 1px solid #D4D4D4
-    font-family: 'Verdana'
-    .control-label
-      padding: 9px 15px
-      font-size: 16px
-      line-height: 2.06
-      img
-        margin-right: 17px
-      &-wide
-        img
-          margin-right: 16px
-    &:first-child
-      padding: 12px 20px
-      padding-left: 14px
-      button
-        font-family: 'Raleway'
-        padding: 6px 30px
-        border: 1px solid #7899fc
-        text-transform: uppercase
-        display: flex
-        justify-content: space-between
-        white-space: nowrap
-        background-color: #ffffff
-        font-weight: 500
-        letter-spacing: 0.1px
-        img
-          margin-left: 8px
-    &-dropdown
-      background-color: #fafbfd
-      font-size: 14px
-      padding: 20px 11px 15px 50px
-      .acqisition
-        display: flex
-        justify-content: space-between
-        align-items: center
-        padding-bottom: 10px
-        border-bottom: solid 1px #e7e9ea
-        &-control
-          display: flex
-          flex-direction: column
-          align-items: start
-          p
-            padding: 7px 0
-        &-select-small
-          display: flex
-          flex-direction: column
-          .custom-select-wrapper
-            width: 40px
-            font-size: 10px
-            &:first-child
-              margin-bottom: 10px
-
-.acqisition-stream
-  p
-    padding: 10px 0
-
-.dropdown-gpio
-  padding: 0
-  .selecting-gpio
-    padding: 20px 11px 28px 50px
-    p
-      margin-left: 5px
-      margin-bottom: 5px
-    .custom-select-wrapper
-      margin-bottom: 28px
-      &:last-child
-        margin: 0
-
-.dropdown, .roi, #roi
-  display: none
-
-#roi:checked ~ .roi
-  display: block
-
-.open-menu-item
-  .dropdown
-    display: block
-  label .control-label
-    background: rgba(120, 153, 252, 0.1)
-    color: #7798FB
-    border-left: 4px solid #7798FB
-    padding-left: 11px
-
-.btn-composition
-  margin-bottom: 7px
-  button
-    width: 100%
-    height: 29px
-    border: solid 1px #7899fc
-    background-color: rgba(215, 225, 234, 0.3)
-    font-size: 14px
-    font-weight: 400
-    &:active
-      background-color: #7899fc
-  span
-    font-size: 7px
-    color: #949494
-    white-space: nowrap
-    img
-      margin-right: 5px
-  &-warning
-    margin-top: 22px
-    button
-      border: solid 1px #ff5a5a
-
-.camera-setup
-  padding-top: 15px
-  >section
-    &:first-child
-      margin-bottom: 10px
-    .range-inputs
-      display: flex
-      align-items: center
-      margin-top: 5px
-      position: relative
-      input
-        padding-left: 2px
-        &:last-child
-          width: 45px
-          height: 20px
-          border-radius: 3px
-          border: solid 1px #d5e1eb
-          margin-left: 10px
-          &:focus, &:active
-            border: solid 1px #7899fc
-      span
-        content: 'ms'
-        position: absolute
-        right: 9px
-        top: 3px
-        font-size: 10px
-        color: #949494
-
-.ref-exp-wrapper
-  padding-top: 15px
-  border-top: 1px solid #D4D4D4
-  display: flex
-  justify-content: space-between
-  font-weight: 100
-  p
-    font-size: 12px
-    font-weight: 100
-    white-space: nowrap
-  input
-    width: 50px
-    height: 20px
-    border: solid 1px #d5e1eb
-    padding-right: 14px
-    padding-left: 13px
-  div
-    position: relative
-    span
-      position: absolute
-      right: 5px
-      top: 5px
-      font-size: 10px
-      color: #949494
-
-.selecting-model
-  padding-bottom: 20px
-  border-bottom: solid 1px #e7e9ea
-  label
-    cursor: pointer
-    font-size: 12px
-    height: 30px
-    border-radius: 3px
-    border: solid 1px #7899fc
-    width: 100%
-    display: flex
-    align-items: center
-    justify-content: center
-    margin-top: 25px
-    img
-      margin-right: 10px
-  >p
-    margin-bottom: 5px
-
-  input[type="file"]
-    display: none
-
-.collecting-data
-  .btn-composition
-    margin: 0
-  section
-    font-size: 12px
-    border-radius: 3px
-    background-color: rgba(215, 225, 234, 0.3)
-    display: flex
-    justify-content: space-between
-    padding: 15px 11px
-    border-top-right-radius: 3px
-    border-top-left-radius: 3px
-    >div
-      p
-        margin: 9px 0
-        height: 20px
-        &:first-child
-          margin-top: 0
-  &-dropdowns
-    width: 110px
-    input
-      height: 20px
-      background: transparent
-      border-bottom: solid 1px #e7e9ea
-      width: 110px
-  .custom-select__trigger
-    background-color: transparent
-    font-size: 12px
-  .open
-    .custom-select__trigger
-      border: solid 1px #d5e1eb
-      border-bottom-color: #fff
-      border-top-color: #fff
-      background: #ffffff
-      font-size: 10px
-  .custom-select
-    border: none
-    border-bottom: 1px solid #d5e1eb
-    font-size: 10px
-    position: relative
-
-.frames-block
-  .open
-    .custom-select__trigger
-      span:after
-        content : "frames"
-        position: absolute
-        right: 2px
-        color: #374049
-        opacity: 0.5
-        font-size: 10px
-  .custom-select
-    span:after
-      content : "frames"
-      position: absolute
-      right: 2px
-      color: #374049
-      opacity: 0.5
-      font-size: 10px
-
-.control-btn-advanced
-  padding-bottom: 5px
-
-.custom-select
-  .custom-select__trigger
-    span:after
-      content: none
 
 // Main content
 main
@@ -436,10 +145,10 @@ main
     max-width: 800px
     min-width: 700px
   .screen-block
-    background: #7899fc
+    background: $accent
     position: relative
     &-warn
-      background-color: #ff5a5a
+      background-color: $warn
 
   .diagram-block
     height: 200px
@@ -476,9 +185,6 @@ main
   &-header,.play-manage-block
     color: #ffffff
     padding-bottom: 0
-    display: flex
-    align-items: center
-    justify-content: space-between
   &-header
     padding: 2px 16px
     font-size: 12px
@@ -506,12 +212,12 @@ main
       border-radius: 3px
       border: 1px solid #fff
       padding: 7px 12px
-      background: #ff5a5a
+      background: $warn
       min-width: 68px
       margin-left: 46px
       &:hover
         background-color: #ffffff
-        color: #ff5a5a
+        color: $warn
 
 .play-manage-block
   background-color: rgba(255, 255, 255, 0.2)
@@ -522,24 +228,18 @@ main
     align-items: center
     cursor: pointer
     &:hover
-      background-color: #ed4f4f
+      background-color: $warn
     span
       text-transform: uppercase
       font-size: 11px
       margin-left: 12px
   &-active
-    background-color: #ed4f4f
+    background-color: $warn
 
 .main-layout-header
-  display: flex
-  justify-content: space-between
-  align-items: center
   background-color: #fff
   padding: 15px 20px
   &-params, &-brightness
-    display: flex
-    align-items: center
-    justify-content: space-between
     p
       text-transform: uppercase
       font-weight: 200
@@ -574,332 +274,7 @@ main
       &-wrapper
         min-width: 110px
     .open
-      border: solid 1px #d5e1eb
+      border: solid 1px $bdr-c
 
-// Modals
-.large-dlg,.dlg-wrapper
-  position: absolute
-  top: 0
-  right: 0
-  bottom: 0
-  left: 0
-  max-width: 1440px
-  width: 100vw
-  height: 100vh
-  margin: 0 auto
-
-.dlg-wrapper
-  background: rgba(0, 0, 0, 0.4)
-  display: flex
-  align-items: center
-
-.small-dlg
-  height: 300px
-  width: 500px
-  min-width: 400px
-  background-color: #fff
-  margin: auto
-  margin: 0 auto
-  border-radius: 3px
-  .modal-fotter
-    padding: 13px 140px
-    border-top: 1px solid #d5e1eb
-    display: flex
-    align-items: center
-    justify-content: space-between
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15)
-    button
-      padding: 6px 19px
-      text-transform: uppercase
-      color: #374049
-      letter-spacing: 0.1
-      font-size: 11px
-      background-color: #ffffff
-      border: solid 1px #7899fc
-  .modal-body
-    height: 246px
-    display: flex
-    >div
-      display: flex
-      flex-direction: column
-      justify-content: space-around
-      margin: 0 auto
-      padding: 30px 0
-      align-items: center
-    .circle-check
-      width: 50px
-      height: 50px
-      border: 3px solid #7899fc
-      border-radius: 50%
-    &-error
-      width: 50px
-      height: 50px
-      background-color: rgba(255, 90, 90, 0.1)
-      border-radius: 50%
-      display: flex
-      align-items: center
-      justify-content: center
-    &-load
-      width: 100px
-      height: 100px
-
-.small-dlg .flex-center
-  justify-content: center
-
-#dialog .large-dlg #dlg-wrap
-  padding: 35px 54px
-  max-width: 720px
-  min-width: 520px
-  max-height: 100%
-  overflow: scroll
-
-.large-dlg-title
-  font-size: 24px
-
-.small-dlg-title
-  font-size: 14px
-  color: #949494
-  .lines-around:before, .lines-around:after
-    width: 65px
-
-.device-info
-  background-color: rgba(215, 225, 234, 0.3)
-  padding: 30px 28px
-  display: flex
-  flex-direction: column
-  align-items: center
-  justify-content: center
-  margin-top: 25px
-  button
-    padding: 7px 44px
-    border: solid 1px #7899fc
-    background-color: rgba(215, 225, 234, 0.8)
-    color: #374049
-    font-size: 12px
-    margin-top: 40px
-    img
-      margin-right: 10px
-  section
-    display: flex
-    align-items: center
-    justify-content: space-around
-    >div
-      padding: 0 14px
-      display: flex
-      div, aside
-        display: flex
-        flex-direction: column
-        align-items: start
-        justify-content: space-between
-        font-size: 12px
-        p
-          white-space: nowrap
-          margin-top: 15px
-          margin-right: 35px
-          letter-spacing: 1.75px
-          color: #121212
-          text-transform: uppercase
-          opacity: 0.5
-          font-weight: 100
-        p:first-child
-          margin-top: 0
-      aside
-        flex-direction: start
-        span
-          white-space: nowrap
-      &:last-child
-        border-left: solid 1px #e7e9ea
-
-#dlg-wrap > section
-  margin-top: 35px
-  font-size: 14px
-  p:last-child
-    margin: 20px
-    margin-left: 0
-.qr-code
-  display: flex
-  align-items: start
-  justify-content: space-between
-  p
-    flex-grow: 0
-    line-height: 2
-  img
-    margin-left: 70px
-    flex-grow: 1
-.contact-phone
-  display: flex
-  align-items: center
-  justify-content: space-between
-  p:last-child
-    font-size: 22px
-
-// File manager
-.file-manager
-  .panel-controls-item-dropdown
-    padding: 0
-    position: fixed
-    top: 0
-    right: 0
-    left: 0
-    margin: 0 auto
-    z-index: 1
-    width: 800px
-    -webkit-box-shadow: 2px 4px 44px -12px rgba(0,0,0,0.75)
-    -moz-box-shadow: 2px 4px 44px -12px rgba(0,0,0,0.75)
-    box-shadow: 2px 4px 44px -12px rgba(0,0,0,0.75)
-    background-color: #ffffff
-  &-header
-    position: relative
-    display: flex
-    align-items: center
-    justify-content: space-between
-    padding: 18px 30px 17px 12px
-    &-selector
-      display: flex
-    p
-      text-transform: uppercase
-      font-size: 11px
-    input
-      width: 220px
-      height: 26px
-      border: solid 1px #7899fc
-      padding-left: 6px
-
-.button
-  text-transform: uppercase
-  letter-spacing: 0.1
-  font-size: 11px
-  border: solid 1px #7899fc
-  padding: 5px 20px
-  border-radius: 3px
-
-.select-circle
-  margin-right: 13px
-  height: 12px
-  width: 12px
-  border: solid 1px #7899fc
-  border-radius: 50%
-  display: flex
-  align-items: center
-  justify-content: center
-  cursor: pointer
-  .selected
-    background-color: #7899fc
-    border: .5px solid #fff
-    height: 8px
-    width: 8px
-    border-radius: 50%
-    display: none
-  &:hover
-    .selected
-      display: block
-
-.search
-  position: relative
-  img
-    position: absolute
-    right: 8px
-    top: 6px
-
-#selector
-  display: none
-
-#selector:checked ~ .select-circle .selected
-  display: block
-.nested-folders
-  visibility: hidden
-.file-manager
-  &-list
-    &-item
-      padding: 15px 12px
-      display: flex
-      align-items: center
-      >img.img-edit
-        margin-left: 10px
-        display: none
-      .nested-level-icon
-        display: flex
-        padding-right: 12px
-      &:nth-child(odd)
-        background-color: rgba(213, 225, 235, 0.2)
-        border-top: solid 1px #e7e9ea
-        border-bottom: solid 1px #e7e9ea
-      &:hover
-        >img.img-edit
-          display: block
-          cursor: pointer
-      >section
-        display: none
-    .open
-      padding: 6px 12px
-      ~.nested-folders
-        visibility: visible
-      >p
-        display: none
-      >section
-        display: flex
-        position: relative
-        width: 100%
-        align-items: center
-        input
-          width: 100%
-          border: solid 1px #e7e9ea
-          padding-left: 10px
-          line-height: 2.06
-          font-size: 16px
-          color: #374049
-          font-weight: 100
-        >div
-          display: flex
-          position: absolute
-          right: 2%
-          button
-            height: 25px
-            width: 25px
-            display: flex
-            align-items: center
-            justify-content: center
-            border: solid 1px #949494
-            &:last-child
-              // border-color: #fff
-              background-color: #7899fc
-              margin-left: 5px
-
-.nested-folders
-  padding-left: 69px
-  p
-    margin-left: 12px
-  &-second-level
-    padding-left: 114px
-
-.file-manager
-  &-footer
-    padding: 11px 40px
-    border-top: solid 1px #e7e9ea
-    display: flex
-    align-items: center
-    div
-      display: flex
-      justify-content: center
-      flex-grow: 1
-      padding-left: 70px
-      button:last-child
-        margin-left: 15px
-        border-color: #ff5a5a
-    >button
-      flex-grow: 0
-    label
-      padding: 3px 20px
-      cursor: pointer
-.blur
-  filter: blur(6px)
-  background-color: #000
-  background-color: #012237
-
-.visible
-  visibility: visible
-
-.state_dlg
-  display: none
 .pos-center
   padding-left: 25px

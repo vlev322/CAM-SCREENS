@@ -27,7 +27,7 @@
             <div>
               <a href="#"><img src="./assets/img/icons/png/logo.png" alt="home page" /></a>
             </div>
-            <div>
+            <div class="flex-sb">
               <label for="dialog_state">Help</label>
               <a href="#">My Account</a>
             </div>
@@ -65,12 +65,12 @@
                   </div>
                 </section>
                 <input type="checkbox" id="roi" />
-                <label for="roi" class="roi-checker">
+                <label for="roi" class="roi-checker flex-sb">
                   <span>roi</span>
                   <div class="arrow"></div>
                 </label>
                 <div class="roi">
-                  <div class="filter">
+                  <div class="filter flex-sb">
                     <section>
                       <input type="text" value="0" />
                       <span>nm</span>
@@ -86,7 +86,7 @@
                       <span>nm</span>
                     </section>
                   </div>
-                  <div class="filter">
+                  <div class="filter flex-sb">
                     <section>
                       <input type="text" value="0" />
                       <span>nm</span>
@@ -144,7 +144,7 @@
                   <button>Collect White Reference</button>
                   <span><img src="./assets/img/icons/vector/warn-black.svg" alt="" />Need update. Last captured References: 30.03</span>
                 </div>
-                <div class="ref-exp-wrapper">
+                <div class="ref-exp-wrapper flex-sb">
                   <p>Reference Expiration</p>
                   <div>
                     <input type="text" />
@@ -160,7 +160,7 @@
                 <div class="control-label"><img src="./assets/img/icons/vector/advance-setup.svg" alt="" />Acquisition Setup</div>
               </label>
               <div class="panel-controls-item-dropdown dropdown">
-                <div class="acqisition">
+                <div class="acqisition flex-sb">
                   <div class="acqisition-control">
                     <p>Spatial Bining</p>
                     <p>Spectral Bining</p>
@@ -195,7 +195,7 @@
                   </div>
                 </div>
                 <section class="acqisition-stream">
-                  <p>Streaming Output Type</p>
+                  <p>GenICam™ Output</p>
                   <div class="custom-select-wrapper">
                     <div class="custom-select">
                       <div class="custom-select__trigger">
@@ -234,7 +234,7 @@
                       </div>
                     </div>
                   </div>
-                  <label for="file-upload"><img src="./assets/img/icons/vector/upload.svg" alt="upload" />Upload Model</label>
+                  <label class="flex-c" for="file-upload"><img src="./assets/img/icons/vector/upload.svg" alt="upload" />Upload Model</label>
                   <input id="file-upload" type="file" />
                 </div>
                 <div class="collecting-data">
@@ -281,12 +281,12 @@
             <!-- Cube Manager -->
             <div class="panel-controls-item file-manager">
               <label class="forclick">
-                <div class="control-label"><img src="./assets/img/icons/vector/downloads.svg" alt="" />Cube Manager</div>
+                <div class="control-label"><img src="./assets/img/icons/vector/downloads.svg" alt="" />Data Manager</div>
               </label>
               <div class="panel-controls-item-dropdown dropdown">
-                <section class="file-manager-header">
+                <section class="file-manager-header flex-sb">
                   <div class="file-manager-header-selector">
-                    <div class="select-circle"><div class="selected"></div></div>
+                    <div class="select-circle flex-c"><div class="selected"></div></div>
                     <p>select all</p>
                   </div>
                   <div class="search">
@@ -298,7 +298,7 @@
                   <div class="file-manager-list-item">
                     <div class="nested-level-icon">
                       <input type="checkbox" checked id="selector" />
-                      <label class="select-circle" for="selector"><div class="selected"></div></label>
+                      <label class="select-circle flex-c" for="selector"><div class="selected"></div></label>
                       <img src="./assets/img/icons/vector/combined-folder.svg" alt="icon" />
                     </div>
                     <p>Train Data Folder 1</p>
@@ -307,7 +307,7 @@
                   <div class="file-manager-list-item">
                     <div class="nested-level-icon">
                       <input type="checkbox" id="selector" />
-                      <label class="select-circle" for=""><div class="selected"></div></label>
+                      <label class="select-circle flex-c" for=""><div class="selected"></div></label>
                       <img src="./assets/img/icons/vector/combined-folder.svg" alt="icon" />
                     </div>
                     <p>Train Data Folder 2</p>
@@ -317,7 +317,7 @@
                     <div class="file-manager-list-item open">
                       <div class="nested-level-icon">
                         <input type="checkbox" id="selector" />
-                        <label class="select-circle" for=""><div class="selected"></div></label>
+                        <label class="select-circle flex-c" for=""><div class="selected"></div></label>
                         <img src="./assets/img/icons/vector/combined-folder.svg" alt="icon" />
                       </div>
                       <p>Train Data Folder 3</p>
@@ -349,7 +349,7 @@
                   <div class="file-manager-list-item">
                     <div class="nested-level-icon">
                       <input type="checkbox" id="selector" />
-                      <label class="select-circle" for=""><div class="selected"></div></label>
+                      <label class="select-circle flex-c" for=""><div class="selected"></div></label>
                       <img src="./assets/img/icons/vector/combined-folder.svg" alt="icon" />
                     </div>
                     <p>Train Data Folder 4</p>
@@ -445,7 +445,7 @@
                     </div>
                   </div>
                 </div>
-                <button class="btn-large">Save Settings</button>
+                <button class="btn-large flex-c">Save Settings</button>
               </div>
             </div>
             <button id="open_dlg_restore">Open dialog "restore"</button>
@@ -458,8 +458,8 @@
           <main>
             <section class="scrollable-block">
               <section class="scrollable-block-main-layout">
-                <div class="main-layout-header">
-                  <div class="main-layout-header-params">
+                <div class="main-layout-header flex-sb">
+                  <div class="main-layout-header-params flex-sb">
                     <p>display parameters:</p>
                     <div class="custom-select-wrapper">
                       <div class="custom-select">
@@ -475,7 +475,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="main-layout-header-brightness">
+                  <div class="main-layout-header-brightness flex-sb">
                     <p>Brightness</p>
                     <input class="input_range" type="range" value="80" min="10" max="100" step="1" />
                     <input type="text" value="80" size="3" />
@@ -485,9 +485,9 @@
                 <!-- Casual -->
 
                 <section class="screen-block">
-                  <div class="screen-block-header">
+                  <div class="screen-block-header flex-sb">
                     <p>Capturing [ 00:00:00 / 297.7 KB ]</p>
-                    <div class="play-manage-block">
+                    <div class="play-manage-block flex-sb">
                       <div><img src="./assets/img/icons/vector/pause.svg" alt="pause" /><span>pause</span></div>
                       <div class="play-manage-block-active"><img src="./assets/img/icons/vector/play.svg" alt="play" /><span>start</span></div>
                       <div><img src="./assets/img/icons/vector/save.svg" alt="save" /><span>save</span></div>
@@ -499,7 +499,7 @@
 
                 <!-- WARNING -->
                 <!-- <section class="screen-block screen-block-warn">
-                  <div class="screen-block-header">
+                  <div class="screen-block-header flex-sb">
                     <p>Please, place white referance ( i )</p>
                     <div><button>cancel</button><button>done</button></div>
                   </div>
@@ -524,7 +524,7 @@
             <p>Are you sure you want to Restore Setup Wizard?</p>
           </div>
         </div>
-        <div class="modal-fotter">
+        <div class="modal-fotter flex-sb">
           <button>restore</button>
           <button class="close_dlg">cancel</button>
         </div>
@@ -540,7 +540,7 @@
             <p>Training data successfully saved!</p>
           </div>
         </div>
-        <div class="modal-fotter flex-center">
+        <div class="modal-fotter flex-sb flex-center">
           <button class="close_dlg">done</button>
         </div>
       </div>
@@ -555,7 +555,7 @@
             <p>Are you sure you don’t want to Save Settings?</p>
           </div>
         </div>
-        <div class="modal-fotter">
+        <div class="modal-fotter flex-sb">
           <button>save</button>
           <button class="close_dlg">yes</button>
         </div>
@@ -567,13 +567,13 @@
       <div class="small-dlg">
         <div class="modal-body">
           <div>
-            <div class="modal-body-error">
+            <div class="modal-body-error flex-c">
               <img src="./assets/img/icons/vector/error.svg" alt="" />
             </div>
             <p>Error! Dark reerence wasn’t taken</p>
           </div>
         </div>
-        <div class="modal-fotter">
+        <div class="modal-fotter flex-sb">
           <button>retake</button>
           <button class="close_dlg">cancel</button>
         </div>
@@ -589,7 +589,7 @@
             <p>Training data saving…</p>
           </div>
         </div>
-        <div class="modal-fotter flex-center">
+        <div class="modal-fotter flex-sb flex-center">
           <button class="close_dlg">cancel</button>
         </div>
       </div>
@@ -604,7 +604,7 @@
             <p>Dark reerence is taking…</p>
           </div>
         </div>
-        <div class="modal-fotter flex-center">
+        <div class="modal-fotter flex-sb flex-center">
           <button class="close_dlg">cancel</button>
         </div>
       </div>
@@ -619,7 +619,7 @@
             <p>Dark reerence was successfully taken</p>
           </div>
         </div>
-        <div class="modal-fotter flex-center">
+        <div class="modal-fotter flex-sb flex-center">
           <button class="close_dlg">done</button>
         </div>
       </div>
@@ -632,7 +632,7 @@
         <div id="dlg-wrap">
           <label id="dlg-close" for="dialog_state"><img src="./assets/img/icons/vector/close.svg" alt="" /></label>
           <div class="large-dlg-title"><p class="lines-around">Need Help?</p></div>
-          <div class="device-info">
+          <div class="device-info flex-c">
             <section>
               <div>
                 <div>
@@ -668,12 +668,12 @@
             </article>
           </section>
           <div class="small-dlg-title"><p class="lines-around">or</p></div>
-          <section class="qr-code">
+          <section class="qr-code flex-sb">
             <p>User your mobile device to scan the QR code located on the side of your instrument</p>
             <img src="./assets/img/icons/vector/qr-code.svg" alt="">
           </section>
           <div class="small-dlg-title"><p class="lines-around">or</p></div>
-          <section class="contact-phone">
+          <section class="contact-phone flex-sb">
             <p>Call our support line at:</p>
             <img src="./assets/img/icons/vector/phone-call.svg" alt="">
             <p class="accent-color">+1 978-353-4100</p>

@@ -1,0 +1,153 @@
+// Modals
+.large-dlg,.dlg-wrapper
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  max-width: 1440px
+  width: 100vw
+  height: 100vh
+  margin: 0 auto
+
+.dlg-wrapper
+  background: rgba(0, 0, 0, 0.4)
+  display: flex
+  align-items: center
+
+.small-dlg
+  height: 300px
+  width: 500px
+  min-width: 400px
+  background-color: #fff
+  margin: auto
+  margin: 0 auto
+  border-radius: 3px
+  .modal-fotter
+    padding: 13px 140px
+    border-top: 1px solid $bdr-c
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15)
+    button
+      padding: 6px 19px
+      text-transform: uppercase
+      color: $text-c
+      letter-spacing: 0.1
+      font-size: 11px
+      background-color: #ffffff
+      border: solid 1px $accent
+  .modal-body
+    height: 246px
+    display: flex
+    >div
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+      margin: 0 auto
+      padding: 30px 0
+      align-items: center
+    .circle-check
+      width: 50px
+      height: 50px
+      border: 3px solid $accent
+      border-radius: 50%
+    &-error
+      width: 50px
+      height: 50px
+      background-color: rgba(255, 90, 90, 0.1)
+      border-radius: 50%
+    &-load
+      width: 100px
+      height: 100px
+
+.small-dlg .flex-center
+  justify-content: center
+
+#dialog .large-dlg #dlg-wrap
+  padding: 35px 54px
+  max-width: 720px
+  min-width: 520px
+  max-height: 100%
+  overflow: scroll
+
+.large-dlg-title
+  font-size: 24px
+
+.small-dlg-title
+  font-size: 14px
+  color: #949494
+  .lines-around:before, .lines-around:after
+    width: 65px
+
+.device-info
+  background-color: rgba(215, 225, 234, 0.3)
+  padding: 30px 28px
+  flex-direction: column
+  margin-top: 25px
+  button
+    padding: 7px 44px
+    border: solid 1px $accent
+    background-color: rgba(215, 225, 234, 0.8)
+    color: $text-c
+    font-size: 12px
+    margin-top: 40px
+    img
+      margin-right: 10px
+  section
+    display: flex
+    align-items: center
+    justify-content: space-around
+    >div
+      padding: 0 14px
+      display: flex
+      div, aside
+        display: flex
+        flex-direction: column
+        align-items: start
+        justify-content: space-between
+        font-size: 12px
+        p
+          white-space: nowrap
+          margin-top: 15px
+          margin-right: 35px
+          letter-spacing: 1.75px
+          color: #121212
+          text-transform: uppercase
+          opacity: 0.5
+          font-weight: 100
+        p:first-child
+          margin-top: 0
+      aside
+        flex-direction: start
+        span
+          white-space: nowrap
+      &:last-child
+        border-left: solid 1px $bdr-c
+
+#dlg-wrap > section
+  margin-top: 35px
+  font-size: 14px
+  p:last-child
+    margin: 20px
+    margin-left: 0
+.qr-code
+  p
+    flex-grow: 0
+    line-height: 2
+  img
+    margin-left: 70px
+    flex-grow: 1
+
+.contact-phone
+  p:last-child
+    font-size: 22px
+
+.blur
+  filter: blur(6px)
+  background-color: #000
+  background-color: #012237
+
+.visible
+  visibility: visible
+
+.state_dlg
+  display: none

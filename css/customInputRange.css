@@ -110,6 +110,9 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
+  -webkit-box-shadow: 10px 10px 91px 0px rgba(120, 153, 252, 1);
+  -moz-box-shadow: 10px 10px 91px 0px rgba(120, 153, 252, 1);
+  box-shadow: 10px 10px 91px 0px rgba(120, 153, 252, 1);
 }
 
 /*Mozilla thumb*/
@@ -123,6 +126,9 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 50%;
   background: #e7e7e7;
   border: 1px solid #c5c5c5;
+  -webkit-box-shadow: 10px 10px 91px 0px rgba(120, 153, 252, 1);
+  -moz-box-shadow: 10px 10px 91px 0px rgba(120, 153, 252, 1);
+  box-shadow: 10px 10px 91px 0px rgba(120, 153, 252, 1);
 }
 
 /*IE & Edge input*/
@@ -147,6 +153,9 @@ input[type="range"]::-ms-thumb {
   border-radius: 5px;
   background: #d5e1eb;
   border: 1px solid #c5c5c5;
+  -webkit-box-shadow: 10px 10px 91px 0px rgba(120, 153, 252, 1);
+  -moz-box-shadow: 10px 10px 91px 0px rgba(120, 153, 252, 1);
+  box-shadow: 10px 10px 91px 0px rgba(120, 153, 252, 1);
 }
 
 /*IE & Edge left side*/

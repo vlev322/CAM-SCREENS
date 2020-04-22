@@ -76,8 +76,8 @@ p, body
 .header-wrapper
   position: relative
   background-color: #ffffff
-  height: 60px
   border-bottom: 1px solid #D4D4D4
+  padding: 9px 32px 8px 14px
 
 header
   margin: 0 auto
@@ -85,15 +85,13 @@ header
   display: flex
   align-items: center
   justify-content: space-between
-  padding: 16px
   font-size: 14px
-  padding-top: 0
-  padding-right: 32px
   img
     height: 48px
     width: auto
   div:last-child
     display: flex
+    align-items: center
     justify-content: space-between
     label
       color: #7799fc
@@ -151,6 +149,7 @@ header
         font-size: 10px
         color: #374049
         top: -20px
+        left: 7px
     input
       padding-left: 3px
       width: 45px
@@ -168,7 +167,7 @@ header
   margin-bottom: 15px
   border-bottom: solid 1px #e7e9ea
 .panel-controls
-  width: 300px
+  width: 315px
   background-color: #ffffff
   &-item
     border-bottom: 1px solid #D4D4D4
@@ -252,6 +251,7 @@ header
     background: rgba(120, 153, 252, 0.1)
     color: #7798FB
     border-left: 4px solid #7798FB
+    padding-left: 11px
 
 .btn-composition
   margin-bottom: 7px
@@ -298,8 +298,8 @@ header
       span
         content: 'ms'
         position: absolute
-        right: 5px
-        top: 2px
+        right: 8px
+        top: 3px
         font-size: 10px
         color: #949494
 
@@ -370,8 +370,8 @@ header
   .open
     .custom-select__trigger
       border: solid 1px #d5e1eb
-      border-bottom: none
-      border-top: none
+      border-bottom-color: #fff
+      border-top-color: #fff
       background: #ffffff
       font-size: 10px
   .custom-select
@@ -421,10 +421,12 @@ main
   .screen-block, .diagram-block
     background-color: #fff
     height: 500px
-    margin-top: 30px
+    margin-top: 22px
   .screen-block
     background: #7899fc
     position: relative
+    width: 700px
+    height: 440px
     &-warn
       background-color: #ff5a5a
 
@@ -445,11 +447,20 @@ main
     color: #ffffff
     position: absolute
     bottom: 10px
-    left: 50%
-    padding: 3px 12px
+    left: 44%
+    padding: 1px 12px
     cursor: pointer
     text-align: center
     background: rgba(255,245,215,0.1)
+    width: 85px
+    opacity: 0
+    -webkit-transition: all 0.5s 0s ease
+    -moz-transition: all 0.5s 0s ease
+    -o-transition: all 0.5s 0s ease
+    transition: all 0.5s 0s ease
+  &:hover
+    .screen-block-state
+      opacity: 1
 
   &-header,.play-manage-block
     color: #ffffff
@@ -463,7 +474,7 @@ main
     font-family: 'Raleway'
     p
       &:first-child
-        margin-right: 100px
+        margin-right: 50px
       &:last-child
         flex-grow: 1
         text-align: right
@@ -548,12 +559,11 @@ main
       background-color: transparent
       font-weight: 500
     .custom-select
-      border: none
+      border-color: #fff
       &-wrapper
         min-width: 110px
     .open
       border: solid 1px #d5e1eb
-      border-bottom: none
 
 // Modals
 .large-dlg,.dlg-wrapper
@@ -610,12 +620,23 @@ main
       height: 50px
       border: 3px solid #7899fc
       border-radius: 50%
+    &-error
+      width: 50px
+      height: 50px
+      background-color: rgba(255, 90, 90, 0.1)
+      border-radius: 50%
+      display: flex
+      align-items: center
+      justify-content: center
+    &-load
+      width: 100px
+      height: 100px
 
 .small-dlg .flex-center
   justify-content: center
 
 #dialog .large-dlg #dlg-wrap
-  padding: 20px 54px
+  padding: 35px 54px
   max-width: 720px
   min-width: 520px
   max-height: 100%
@@ -679,7 +700,7 @@ main
         border-left: solid 1px #e7e9ea
 
 #dlg-wrap > section
-  margin-top: 15px
+  margin-top: 35px
   font-size: 14px
   p:last-child
     margin: 20px
@@ -691,11 +712,9 @@ main
   p
     flex-grow: 0
     line-height: 2
-  div
-    width: 100px
-    height: 100px
-    background-color: #c3c3c3
-    flex-grow: 2
+  img
+    margin-left: 70px
+    flex-grow: 1
 .contact-phone
   display: flex
   align-items: center
@@ -734,13 +753,6 @@ main
       height: 26px
       border: solid 1px #7899fc
       padding-left: 6px
-    &-selected-button
-      position: absolute
-      top: 18px
-      right: 50%
-      left: 50%
-      margin: 0 auto
-      text-align: center
 
 .button
   text-transform: uppercase
@@ -838,7 +850,7 @@ main
             justify-content: center
             border: solid 1px #949494
             &:last-child
-              border: none
+              // border-color: #fff
               background-color: #7899fc
               margin-left: 5px
 

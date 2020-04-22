@@ -51,17 +51,17 @@
                 <section>
                   <p>Exposure</p>
                   <div class="range-inputs">
-                    <input class="input_range" type="range" value="80" min="10" max="100" step="1" />
+                    <input class="input_range" type="range" value="33" min="0" max="100" step="1" />
                     <span>ms</span>
-                    <input type="text" />
+                    <input type="text" value="33" />
                   </div>
                 </section>
                 <section>
                   <p>Frame Period</p>
                   <div class="range-inputs">
-                    <input class="input_range" type="range" value="80" min="10" max="100" step="1" />
+                    <input class="input_range" type="range" value="80" min="0" max="100" step="1" />
                     <span>ms</span>
-                    <input type="text" />
+                    <input type="text" value="80" />
                   </div>
                 </section>
                 <input type="checkbox" id="roi" />
@@ -79,10 +79,10 @@
                       <div class="block-min" onMouseDown="moveRange(this);" onTouchStart="moveRange( this);"></div>
                       <div class="color-range"></div>
                       <div class="block-max" onMouseDown="moveRange(this)" onTouchStart="moveRange( this);"></div>
-                      <span>Spectral <img src="./assets/img/icons/vector/warn-black.svg" alt="" /></span>
+                      <span>Spectral <img src="./assets/img/icons/vector/icon-info.svg" alt="" /></span>
                     </div>
                     <section>
-                      <input type="text" value="90" />
+                      <input type="text" value="84" />
                       <span>nm</span>
                     </section>
                   </div>
@@ -95,10 +95,10 @@
                       <div class="block-min" onMouseDown="moveRange(this);" onTouchStart="moveRange( this);"></div>
                       <div class="color-range"></div>
                       <div class="block-max" onMouseDown="moveRange(this)" onTouchStart="moveRange( this);"></div>
-                      <span>Spectral <img src="./assets/img/icons/vector/warn-black.svg" alt="" /></span>
+                      <span>Spectral <img src="./assets/img/icons/vector/icon-info.svg" alt="" /></span>
                     </div>
                     <section>
-                      <input type="text" value="90" />
+                      <input type="text" value="92" />
                       <span>nm</span>
                     </section>
                   </div>
@@ -293,10 +293,6 @@
                     <input type="text" placeholder="SEARCH" />
                     <img src="./assets/img/icons/vector/search.svg" class="img-edit" alt="search" />
                   </div>
-
-                  <div class="file-manager-header-selected-button">
-                    <button class="button">select</button>
-                  </div>
                 </section>
                 <section class="file-manager-list">
                   <div class="file-manager-list-item">
@@ -409,7 +405,7 @@
               </label>
               <div class="panel-controls-item-dropdown dropdown dropdown-gpio">
                 <div class="selecting-gpio">
-                  <p>Acqisition trigger input</p>
+                  <p>Acquisition trigger input</p>
                   <div class="custom-select-wrapper">
                     <div class="custom-select">
                       <div class="custom-select__trigger">
@@ -493,7 +489,7 @@
                     <p>Capturing [ 00:00:00 / 297.7 KB ]</p>
                     <div class="play-manage-block">
                       <div><img src="./assets/img/icons/vector/pause.svg" alt="pause" /><span>pause</span></div>
-                      <div class="play-manage-block-active" ><img src="./assets/img/icons/vector/play.svg" alt="play" /><span>start</span></div>
+                      <div class="play-manage-block-active"><img src="./assets/img/icons/vector/play.svg" alt="play" /><span>start</span></div>
                       <div><img src="./assets/img/icons/vector/save.svg" alt="save" /><span>save</span></div>
                     </div>
                     <p>Cancel</p>
@@ -536,7 +532,7 @@
     </div>
 
     <!-- Training data successfully saved! -->
-    <div id="dlg_success" class="dlg-wrapper state_dlg">
+    <!-- <div id="dlg_success" class="dlg-wrapper state_dlg">
       <div class="small-dlg">
         <div class="modal-body">
           <div>
@@ -548,86 +544,89 @@
           <button class="close_dlg">done</button>
         </div>
       </div>
+    </div> -->
+
+    <!-- Are you sure you don’t want to Save Settings? -->
+    <!-- <div id="dlg_success" class="dlg-wrapper state_dlg">
+      <div class="small-dlg">
+        <div class="modal-body">
+          <div>
+            <img src="./assets/img/icons/vector/icon-question.svg" alt="" />
+            <p>Are you sure you don’t want to Save Settings?</p>
+          </div>
+        </div>
+        <div class="modal-fotter">
+          <button>save</button>
+          <button class="close_dlg">yes</button>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Error! Dark reerence wasn’t taken -->
+    <!-- <div id="dlg_success" class="dlg-wrapper state_dlg">
+      <div class="small-dlg">
+        <div class="modal-body">
+          <div>
+            <div class="modal-body-error">
+              <img src="./assets/img/icons/vector/error.svg" alt="" />
+            </div>
+            <p>Error! Dark reerence wasn’t taken</p>
+          </div>
+        </div>
+        <div class="modal-fotter">
+          <button>retake</button>
+          <button class="close_dlg">cancel</button>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Training data saving… -->
+    <div id="dlg_success" class="dlg-wrapper state_dlg">
+      <div class="small-dlg">
+        <div class="modal-body">
+          <div>
+            <img class="modal-body-load" src="./assets/img/spinner.gif" alt="" />
+            <p>Training data saving…</p>
+          </div>
+        </div>
+        <div class="modal-fotter flex-center">
+          <button class="close_dlg">cancel</button>
+        </div>
+      </div>
     </div>
 
+    <!-- Dark reerence is taking … -->
+    <!-- <div id="dlg_success" class="dlg-wrapper state_dlg">
+      <div class="small-dlg">
+        <div class="modal-body">
+          <div>
+            <img class="modal-body-load" src="./assets/img/spinner.gif" alt="" />
+            <p>Dark reerence is taking…</p>
+          </div>
+        </div>
+        <div class="modal-fotter flex-center">
+          <button class="close_dlg">cancel</button>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Dark reerence was successfully taken -->
+    <div id="dlg_success" class="dlg-wrapper state_dlg">
+      <div class="small-dlg">
+        <div class="modal-body">
+          <div>
+            <div class="circle-check"></div>
+            <p>Dark reerence was successfully taken</p>
+          </div>
+        </div>
+        <div class="modal-fotter flex-center">
+          <button class="close_dlg">done</button>
+        </div>
+      </div>
+    </div>
+
+
     <div id="dialog">
-      <!-- Are you sure you don’t want to Save Settings? -->
-      <!-- <div class="small-dlg">
-        <div id="dlg-wrap" class="small-dlg">
-          <div class="modal-body">
-            <div>
-              <div class="circle-check"></div>
-              <p>Are you sure you don’t want to Save Settings?</p>
-            </div>
-          </div>
-          <div class="modal-fotter">
-            <button>save</button>
-            <button><label for="dialog_state">yes</label></button>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- Error! Dark reerence wasn’t taken -->
-      <!-- <div class="small-dlg">
-        <div id="dlg-wrap" class="small-dlg">
-          <div class="modal-body">
-            <div>
-              <div class="circle-check"></div>
-              <p>Error! Dark reerence wasn’t taken </p>
-            </div>
-          </div>
-          <div class="modal-fotter">
-            <button>retake</button>
-            <button><label for="dialog_state">cancel</label></button>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- Training data saving… -->
-      <!-- <div class="small-dlg">
-        <div id="dlg-wrap" class="small-dlg">
-          <div class="modal-body">
-            <div>
-              <div class="circle-check"></div>
-              <p>Training data saving…</p>
-            </div>
-          </div>
-          <div class="modal-fotter flex-center">
-            <button><label for="dialog_state">cancel</label></button>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- Dark reerence is taking … -->
-      <!-- <div class="small-dlg">
-        <div id="dlg-wrap" class="small-dlg">
-          <div class="modal-body">
-            <div>
-              <div class="circle-check"></div>
-              <p>Dark reerence is taking…</p>
-            </div>
-          </div>
-          <div class="modal-fotter flex-center">
-            <button><label for="dialog_state">cancel</label></button>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- Dark reerence was successfully taken -->
-      <!-- <div class="small-dlg">
-        <div id="dlg-wrap">
-          <div class="modal-body">
-            <div>
-              <div class="circle-check"></div>
-              <p>Dark reerence was successfully taken</p>
-            </div>
-          </div>
-          <div class="modal-fotter flex-center">
-            <button><label for="dialog_state">done</label></button>
-          </div>
-        </div>
-      </div> -->
-
       <!-- large modal -->
       <div class="large-dlg">
         <div id="dlg-wrap">
@@ -671,11 +670,12 @@
           <div class="small-dlg-title"><p class="lines-around">or</p></div>
           <section class="qr-code">
             <p>User your mobile device to scan the QR code located on the side of your instrument</p>
-            <div></div>
+            <img src="./assets/img/icons/vector/qr-code.svg" alt="">
           </section>
           <div class="small-dlg-title"><p class="lines-around">or</p></div>
           <section class="contact-phone">
             <p>Call our support line at:</p>
+            <img src="./assets/img/icons/vector/phone-call.svg" alt="">
             <p class="accent-color">+1 978-353-4100</p>
           </section>
         </div>

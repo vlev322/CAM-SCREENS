@@ -1,6 +1,10 @@
 function valueTotalRatio(value, min, max) {
   return ((value - min) / (max - min)).toFixed(2);
 }
+function isAN(value) {
+  if (value instanceof Number) value = value.valueOf();
+  return isFinite(value) && value === parseInt(value, 10);
+}
 
 const normalizerValue = (value, minVal, maxVal) => {
   const enteredVal = parseInt(value);
@@ -60,7 +64,11 @@ function initRangeEl() {
       }
     });
     inputRangeHandler.addEventListener("focusout", (e) => {
-      e.target.value = normalizerValue(e.target.value, minVal, maxVal);
+      if (isAN(e.target.value)) {
+        e.target.value = normalizerValue(e.target.value, minVal, maxVal);
+      } else {
+        e.target.value = minVal;
+      }
     });
   }
 }

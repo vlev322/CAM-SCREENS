@@ -75,7 +75,7 @@ open_dlg_success.addEventListener("click", function (e) {
   main_wrapper.classList.toggle("blur");
 });
 
-// CUSTOM MULTYRANGE
+// CUSTOM FILTER
 
 function getCoords(elem) {
   /*Получаем координаты относительно окна браузера*/
@@ -108,6 +108,7 @@ function moveRange(elem) {
   var block2 = {};
   if (elem.classList.contains("block-min")) {
     block2.element = elem.parentElement.children[2];
+
     block2.coords = getCoords(block2.element);
     f = 0;
   } else {
@@ -164,10 +165,6 @@ function moveRange(elem) {
     let handleInputMin = elemSiblings[0].querySelector("input");
     let handleInputMax = elemSiblings[1].querySelector("input");
 
-    handleInputMin.addEventListener("change", () => {
-      console.log("we are typing", handleInputMin.value);
-    });
-
     if (f == 0) {
       value = (newLeft / (parent.coords.width / (rangeMax - rangeMin)) + rangeMin).toFixed(0);
       handleInputMin.value = value;
@@ -195,4 +192,34 @@ function moveRange(elem) {
     document.removeEventListener("touchend", onMouseUp);
     document.removeEventListener("touchmove", onMouseMove);
   }
+}
+
+for (const filter of document.querySelectorAll(".filter")) {
+  const inputs = filter.querySelectorAll("input");
+  const parent = {};
+  const handleInputMin = inputs[0];
+  const handleInputMax = inputs[1];
+  parent.element = handleInputMin.parentElement;
+
+  const blockMin = filter.querySelector(".block-min");
+  const blockMax = filter.querySelector(".block-max");
+  const colorRange = filter.querySelector(".color-range");
+
+  const minLeft = blockMin.style.left || 0;
+  const maxLeft = blockMax.style.left || 49;
+
+  colorRange.style.width = 56;
+
+  const rangeVal = (maxLeft - minLeft) / 100;
+  handleInputMin.addEventListener("input", (e) => {
+    const value = e.target.value;
+    blockMin.style.left = value * rangeVal + "px";
+    colorRange.style.left = value * rangeVal + "px";
+    colorRange.style.width = 53 - value * rangeVal + "px";
+  });
+  handleInputMax.addEventListener("input", (e) => {
+    const value = e.target.value;
+    blockMax.style.left = value * rangeVal + "px";
+    colorRange.style.width = value * rangeVal + "px";
+  });
 }

@@ -64,10 +64,14 @@ function initRangeEl() {
       }
     });
     inputRangeHandler.addEventListener("focusout", (e) => {
-      if (isAN(e.target.value)) {
+      if (isAN(+e.target.value)) {
         e.target.value = normalizerValue(e.target.value, minVal, maxVal);
+        const ratio = valueTotalRatio(e.target.value, minVal, maxVal);
+        input.style.backgroundImage = getLinearGradientCSS(ratio, "#7899fc", "#c5c5c5");
       } else {
         e.target.value = minVal;
+        const ratio = valueTotalRatio(e.target.value, minVal, maxVal);
+        input.style.backgroundImage = getLinearGradientCSS(ratio, "#7899fc", "#c5c5c5");
       }
     });
   }

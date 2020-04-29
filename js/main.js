@@ -39,7 +39,11 @@ window.addEventListener("click", function (e) {
   }
 });
 
-// CUSTOM SELECTS AND MENU END
+//get siblings
+const getSiblings = (sibling) =>
+  Array.prototype.filter.call(sibling.parentNode.children, function (child) {
+    return child !== sibling;
+  });
 
 //Opening dialogs
 
@@ -112,13 +116,6 @@ function moveRange(elem) {
     f = 1;
   }
 
-  /*Делаем индикатор над ползунком*/
-  var indicator = document.createElement("div");
-  if (elem.children.length) {
-    elem.innerHTML = ""; //обнуляем предыдущее значение
-  }
-  elem.appendChild(indicator);
-
   document.addEventListener("mousemove", onMouseMove);
   document.addEventListener("mouseup", onMouseUp);
   document.addEventListener("touchmove", onMouseMove);
@@ -132,7 +129,6 @@ function moveRange(elem) {
   function onMouseMove(e) {
     /*Определяем смещение влево*/
     e.preventDefault(); //предотвратить запуск выделения элементов
-
     /*Определяем положение мыши в зависимости от устройства*/
     /*На мобильных устройствах может фиксироваться несколько точек касания, поэтому используется массив targetTouches*/
     /*Мы будем брать только первое зафиксированое касание по экрану targetTouches[0]*/
@@ -144,6 +140,7 @@ function moveRange(elem) {
 
     /*Устанавливаем границы движения ползунка*/
     let newLeft = pos - parent.coords.leftX;
+
     let rigthEdge = parent.coords.width - (coords.width + 1);
 
     if (newLeft < 0) {
@@ -159,35 +156,28 @@ function moveRange(elem) {
     /*устанавливаем отступ нашему элементу*/
     elem.style.left = newLeft + "px";
 
-    //     Определяем значение фильтра
+    //Определяем значение фильтра
     let rangeMin = 0;
-    let rangeMax = 100;
-    // let rangeMin = +document.querySelector(".filter input:first-child").value;
-    // let rangeMax = +document.querySelector(".filter input:last-child").value;
+    let rangeMax = 121.8;
+
+    const elemSiblings = getSiblings(elem.parentNode);
+    let handleInputMin = elemSiblings[0].querySelector("input");
+    let handleInputMax = elemSiblings[1].querySelector("input");
+
+    handleInputMin.addEventListener("change", () => {
+      console.log("we are typing", handleInputMin.value);
+    });
+
     if (f == 0) {
-      value = (newLeft / (parent.coords.width / (rangeMax - rangeMin)) + rangeMin).toFixed(1);
+      value = (newLeft / (parent.coords.width / (rangeMax - rangeMin)) + rangeMin).toFixed(0);
+      handleInputMin.value = value;
     } else {
-      value = (newLeft / (parent.coords.width / (rangeMax - rangeMin)) + 0.3 + rangeMin).toFixed(1);
+      value = (newLeft / (parent.coords.width / (rangeMax - rangeMin)) + 0.3 + rangeMin).toFixed(0);
+      handleInputMax.value = value;
     }
-
-    /*Выводим значение над ползунком*/
-    // indicator.style.position = "absolute";
-    // indicator.style.fontSize = "14px";
-    // indicator.style.left = -coords.width / 2 + "px";
-    // indicator.style.top = parseFloat(window.getComputedStyle(elem).getPropertyValue("top")) - 20 + "px";
-
-    /*Для красоты слайдера уберем вывод значений в начальной и конечной точках*/
-    // if (value <= rangeMin) {
-    indicator.innerHTML = "";
-    // } else if (value >= rangeMax) {
-    //   indicator.innerHTML = "";
-    // } else {
-    //   indicator.innerHTML = value;
-    // }
-    // if (value > rangeMin && value < rangeMax) {
-    //   console.log(value);
-    //   rangeMin.value = value;
-    // }
+    if (value > rangeMin && value < rangeMax) {
+      rangeMin.value = value;
+    }
 
     /*Делаем цветную плашечку диапазона выбора*/
     if (f == 0) {

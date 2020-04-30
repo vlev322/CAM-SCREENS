@@ -193,7 +193,7 @@ function moveRange(elem) {
     document.removeEventListener("touchmove", onMouseMove);
   }
 }
-
+const MAX_VALUE = 100;
 for (const filter of document.querySelectorAll(".filter")) {
   const inputs = filter.querySelectorAll("input");
   const parent = {};
@@ -206,20 +206,59 @@ for (const filter of document.querySelectorAll(".filter")) {
   const colorRange = filter.querySelector(".color-range");
 
   const minLeft = blockMin.style.left || 0;
-  const maxLeft = blockMax.style.left || 49;
+  const maxLeft = blockMax.style.left || 59;
 
   colorRange.style.width = 56;
+  const rangeVal = (maxLeft - minLeft) / MAX_VALUE;
 
-  const rangeVal = (maxLeft - minLeft) / 100;
-  handleInputMin.addEventListener("input", (e) => {
-    const value = e.target.value;
-    blockMin.style.left = value * rangeVal + "px";
-    colorRange.style.left = value * rangeVal + "px";
-    colorRange.style.width = 53 - value * rangeVal + "px";
+  handleInputMin.addEventListener("focusout", (e) => {
+    let value = +e.target.value;
+    if (value > +handleInputMax.value) {
+      value = handleInputMax.value;
+      e.target.value = handleInputMax.value;
+    }
+    if (value < 0) {
+      value = 0;
+      e.target.value = 0;
+    }
+    const posLeft = value * rangeVal;
+    blockMin.style.left = posLeft + "px";
+    colorRange.style.left = posLeft + "px";
+    const blockMaxLeft = !blockMax.style.left ? 59 : +/\d+/.exec(blockMax.style.left);
+    colorRange.style.width = blockMaxLeft - posLeft + "px";
   });
-  handleInputMax.addEventListener("input", (e) => {
-    const value = e.target.value;
-    blockMax.style.left = value * rangeVal + "px";
-    colorRange.style.width = value * rangeVal + "px";
+
+  handleInputMax.addEventListener("focusout", (e) => {
+    let value = +e.target.value;
+    if (value <= +handleInputMin.value) {
+      value = handleInputMin.value;
+      e.target.value = handleInputMin.value;
+    }
+    if (value > MAX_VALUE) {
+      value = MAX_VALUE;
+      e.target.value = MAX_VALUE;
+    }
+    const posLeft = value * rangeVal;
+    blockMax.style.left = posLeft + "px";
+    colorRange.style.width = posLeft - +/\d+/.exec(blockMin.style.left) + "px";
   });
 }
+
+// handleInputMin.addEventListener("input", (e) => {
+//   const value = e.target.value;
+//   const posLeft = value * rangeVal;
+//   blockMin.style.left = posLeft + "px";
+//   colorRange.style.left = posLeft + "px";
+//   colorRange.style.width = maxLeft - posLeft + "px";
+// });
+
+// handleInputMax.addEventListener("focusout", (e) => {
+//   let value = e.target.value;
+//   if (value <= handleInputMin.value) {
+//     value = handleInputMin.value;
+//     e.target.value = handleInputMin.value;
+//   }
+//   const posLeft = value * rangeVal;
+//   blockMax.style.left = posLeft + "px";
+//   colorRange.style.width = posLeft - +/\d+/.exec(blockMin.style.left) + "px";
+// });
